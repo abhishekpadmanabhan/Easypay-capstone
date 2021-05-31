@@ -80,7 +80,7 @@
           Name: Master
         state: present 
 
-      - name: Creating nodes in ec2 instance 
+     - name: Creating nodes in ec2 instance 
        ec2: 
         key_name: "{{key_name}}"
         instance_type: "{{instance_type}}"
