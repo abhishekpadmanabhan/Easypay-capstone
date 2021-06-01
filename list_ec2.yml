@@ -13,8 +13,8 @@
 
   - name: List several EC2 instances according to their name tag
     ec2_instance_info:
-      ec2_region: "{{region}}"
-      names:
-        - master
-        - nodes
+      region: "{{region}}"
+      filters:
+         "tag:Name": master
+
     register: result
