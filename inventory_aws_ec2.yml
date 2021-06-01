@@ -4,5 +4,7 @@ regions:
 keyed_groups:
   - key: tags.Name
   - key: tags.task
+filters:
+  instance-state-name: running
 compose:
   ansible_host: public_ip_address
