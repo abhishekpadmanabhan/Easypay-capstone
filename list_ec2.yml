@@ -1,16 +1,23 @@
 ---
-- name: List all EC2 instances
-  ec2_instance_info:
-  register: result
+- hosts: localhost
+  vars:
+     region: us-east-1
+     image_id: ami-04d29b6f966df1537
+     instance_type: t2.micro
+     key_name: ma_ansible_test_key_pair
+  tasks:
+  - name: List all EC2 instances
+    ec2_instance_info:
+    register: result
 
-- name: List a specific EC2 instance
-  ec2_instance_info:
-    ids: i-0c79884ded545df1a
-  register: result
+  - name: List a specific EC2 instance
+    ec2_instance_info:
+     ids: i-0c79884ded545df1a
+    register: result
 
-- name: List several EC2 instances according to their name tag
-  ec2_instance_info:
-    names:
-      - app-server
-      - db-server
-  register: result
+  - name: List several EC2 instances according to their name tag
+    ec2_instance_info:
+      names:
+        - app-server
+        - db-server
+    register: result
