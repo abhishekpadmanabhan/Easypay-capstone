@@ -6,10 +6,6 @@
      instance_type: t2.micro
      key_name: ma_ansible_test_key_pair
   tasks:
-  - name: List all EC2 instances
-    ec2_instance_info:
-    register: result
-
   - name: List a specific EC2 instance
     ec2_instance_info:
       region: "{{region}}"
