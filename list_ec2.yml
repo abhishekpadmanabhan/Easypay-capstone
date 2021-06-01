@@ -8,12 +8,12 @@
   tasks:
   - name: List a specific EC2 instance
     ec2_instance_info:
-      region: "{{region}}"
+      ec2_region: "{{region}}"
     register: result
 
   - name: List several EC2 instances according to their name tag
     ec2_instance_info:
-      region: "{{region}}"
+      ec2_region: "{{region}}"
       names:
         - master
         - nodes
