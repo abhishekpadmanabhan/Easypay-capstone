@@ -9,14 +9,11 @@
   - name: List a specific EC2 instance
     ec2_instance_info:
       region: "{{region}}"
-      vpc_id: "{{vpc.vpc.id}}"
-
-    register: result
+     register: result
 
   - name: List several EC2 instances according to their name tag
     ec2_instance_info:
       region: "{{region}}"
-      vpc_id: "{{vpc.vpc.id}}"
       names:
         - master
         - nodes
