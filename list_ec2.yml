@@ -1,0 +1,16 @@
+---
+- name: List all EC2 instances
+  ec2_instance_info:
+  register: result
+
+- name: List a specific EC2 instance
+  ec2_instance_info:
+    ids: i-0c79884ded545df1a
+  register: result
+
+- name: List several EC2 instances according to their name tag
+  ec2_instance_info:
+    names:
+      - app-server
+      - db-server
+  register: result
