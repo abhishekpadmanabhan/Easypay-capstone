@@ -12,12 +12,14 @@
 
   - name: List a specific EC2 instance
     ec2_instance_info:
-     ids: i-0c79884ded545df1a
+      region: "{{region}}"
+      vpc_id: "{{vpc.vpc.id}}"
+
     register: result
 
   - name: List several EC2 instances according to their name tag
     ec2_instance_info:
       names:
-        - app-server
-        - db-server
+        - master
+        - nodes
     register: result
