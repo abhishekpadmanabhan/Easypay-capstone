@@ -134,7 +134,7 @@
     - name: Add IP to ec2_hosts group
       add_host: 'hostname={{ item.public_ip }} groups=ec2_hosts'
       with_items: '{{worker_node1.instances}}'
-          - name: Wait for SSH to come up
+    - name: Wait for SSH to come up
       local_action: 'wait_for host={{ item.public_ip }} port=22 state=started'
       with_items: '{{worker_node1.instances}}'
     - name: Add IP to ec2_hosts group
