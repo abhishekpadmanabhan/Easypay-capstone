@@ -59,7 +59,7 @@
               - 22
             cidr_ip: 0.0.0.0/0
       register: sg
-    - name: Create an EC2 key
+    - name: create an EC2 key
       ec2_key:
         name: '{{ project_name }}-{{ env }}-key'
         region: '{{ region }}'
