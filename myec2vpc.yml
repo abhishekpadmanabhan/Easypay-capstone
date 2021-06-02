@@ -112,19 +112,19 @@
     - name: Add the newly created EC2 Master instance(s) to host group
       lineinfile: >-
         dest={{ hostpath }} regexp={{ item.public_ip }}
-        insertafter="[master]" line="{{ item.public_ip }} {{hoststring}}"
+        insertafter="[Nodes]" line="{{ item.public_ip }} {{hoststring}}"
         state=present
       with_items: '{{master_node.instances}}'
     - name: Add the newly created EC2 Node1 instance(s) to host group
       lineinfile: >-
         dest={{ hostpath }} regexp={{ item.public_ip }}
-        insertafter="[Node1]" line="{{ item.public_ip }} {{hoststring}}"
+        insertafter="[Nodes]" line="{{ item.public_ip }} {{hoststring}}"
         state=present
       with_items: '{{worker_node1.instances}}'
     - name: Add the newly created EC2 Node 2 instance(s) to host group
       lineinfile: >-
         dest={{ hostpath }} regexp={{ item.public_ip }}
-        insertafter="[Node2]" line="{{ item.public_ip }} {{hoststring}}"
+        insertafter="[Nodes]" line="{{ item.public_ip }} {{hoststring}}"
         state=present
       with_items: '{{worker_node2.instances}}'
     - wait_for: 'path={{ hostpath }} search_regex={{hoststring}}'
@@ -133,4 +133,17 @@
       with_items: '{{master_node.instances}}'
     - name: Add IP to ec2_hosts group
       add_host: 'hostname={{ item.public_ip }} groups=ec2_hosts'
-      with_items: '{{master_node.instances}}'
+      with_items: '{{worker_node1.instances}}'
+          - name: Wait for SSH to come up
+      local_action: 'wait_for host={{ item.public_ip }} port=22 state=started'
+      with_items: '{{worker_node1.instances}}'
+    - name: Add IP to ec2_hosts group
+      add_host: 'hostname={{ item.public_ip }} groups=ec2_hosts'
+      with_items: '{{worker_node2.instances}}'
+    - name: Wait for SSH to come up
+      local_action: 'wait_for host={{ item.public_ip }} port=22 state=started'
+      with_items: '{{worker_node2.instances}}'
+    - name: Add IP to ec2_hosts group
+      add_host: 'hostname={{ item.public_ip }} groups=ec2_hosts'
+      with_items: '{{worker_node2.instances}}'
+
