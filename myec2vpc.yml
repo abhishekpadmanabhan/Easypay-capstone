@@ -89,7 +89,6 @@
         in_vpc: yes
         reuse_existing_ip_allowed: yes
         state: present
-        instance_id: "{{ master_node.instance_ids[0] }}"      
       with_items: "{{ master_node.instance_ids }}"
     - name: Creating nodes in ec2 instance
       ec2:
@@ -117,7 +116,7 @@
     - name: Add the newly created EC2 Master instance(s) to host group
       lineinfile: >-
         dest={{ hostpath }} regexp={{ item.public_ip }}
-        insertafter="[MasterNode]" line="Master {{ item.public_ip }}  {{hoststring}}"
+        insertafter="[Nodes]" line="Master {{ item.public_ip }}  {{hoststring}}"
         state=present
       with_items: '{{master_node.instances}}'
     - name: Add the newly created EC2 Nodes instance(s) to host group
