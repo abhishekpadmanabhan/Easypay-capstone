@@ -90,6 +90,7 @@
         reuse_existing_ip_allowed: yes
         state: present
       with_items: "{{ master_node.instance_ids }}"
+      register: eip_master
     - name: Creating nodes in ec2 instance
       ec2:
         key_name: '{{ project_name }}-{{ env }}-key'
@@ -113,6 +114,8 @@
         reuse_existing_ip_allowed: yes
         state: present
       with_items: "{{ worker_nodes.instance_ids }}"
+      register: eip_nodes
+
     - name: Add the newly created EC2 Master instance(s) to host group
       lineinfile: >-
         dest={{ hostpath }} regexp={{ item.public_ip }}
@@ -127,13 +130,13 @@
       with_items: '{{worker_nodes.instances}}'
     - wait_for: 'path={{ hostpath }} search_regex={{hoststring}}'
     - name: Wait for SSH to come up
-      local_action: 'wait_for host={{ item.private_ip }} port=22 state=started'
+      local_action: 'wait_for host={{ eip_master.public_ip }} port=22 state=started'
       with_items: '{{master_node.instances}}'
     - name: Add IP to ec2_hosts group
       add_host: 'hostname={{ item.public_ip }} groups=ec2_hosts'
       with_items: '{{master_node.instances}}'
     - name: Wait for SSH to come up
-      local_action: 'wait_for host={{ item.private_ip }} port=22 state=started'
+      local_action: 'wait_for host={{ eip_nodes.public_ip }} port=22 state=started'
       with_items: '{{worker_nodes.instances}}'
     - name: Add IP to ec2_hosts group
       add_host: 'hostname={{ item.public_ip }} groups=ec2_hosts'
