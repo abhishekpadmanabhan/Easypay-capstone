@@ -1,10 +1,10 @@
 - hosts: localhost
   vars:
     region: us-east-1
-    image_id: ami-04d29b6f966df1537
+    image_id:  ami-09e67e426f25ce0d7
     instance_type: t2.micro
     project_name: easypay
-    app_code_user: ec2_user
+    app_code_user: ubuntu
     env: staging
     hoststring: ansible_ssh_user=ec2_user ansible_ssh_private_key_file=../aws-private.pem
     hostpath: ../hosts
