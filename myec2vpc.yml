@@ -86,6 +86,10 @@
       ec2_eip:
         device_id: "{{ item }}"
         region: '{{ region }}'
+        in_vpc: yes
+        reuse_existing_ip_allowed: yes
+        state: present
+        instance_id: "{{ master_node.instance_ids[0] }}"      
       with_items: "{{ master_node.instance_ids }}"
     - name: Creating nodes in ec2 instance
       ec2:
@@ -106,6 +110,10 @@
       ec2_eip:
         device_id: "{{ item }}"
         region: '{{ region }}'
+        in_vpc: yes
+        reuse_existing_ip_allowed: yes
+        state: present
+        instance_id: "{{ worker_nodes.instance_ids[0] }}"      
       with_items: "{{ worker_nodes.instance_ids }}"
     - name: Add the newly created EC2 Master instance(s) to host group
       lineinfile: >-
