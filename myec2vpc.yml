@@ -85,6 +85,7 @@
     - name: associate new elastic IPs with each of the instances
       ec2_eip:
         device_id: "{{ item }}"
+        region: '{{ region }}'
       with_items: "{{ master_node.instance_ids }}"
     - name: Creating nodes in ec2 instance
       ec2:
@@ -104,6 +105,7 @@
     - name: associate new elastic IPs with each of the instances
       ec2_eip:
         device_id: "{{ item }}"
+        region: '{{ region }}'
       with_items: "{{ worker_nodes.instance_ids }}"
     - name: Add the newly created EC2 Master instance(s) to host group
       lineinfile: >-
