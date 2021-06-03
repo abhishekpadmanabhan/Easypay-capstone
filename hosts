@@ -1,6 +1,6 @@
 [local]
 localhost ansible_python_interpreter=/usr/local/bin/python3  
 
-[Master]
+[MasterNode]
 
 [Nodes]
