@@ -11,7 +11,7 @@
   tasks:
     - name: creating vpc
       ec2_vpc_net:
-        name: test
+        name: ma-vpc
         cidr_block: 172.10.0.0/16
         region: '{{region}}'
         state: present
@@ -118,10 +118,10 @@
 
     - name: Add the newly created EC2 Master instance(s) to host group
       lineinfile: >-
-        dest={{ hostpath }} regexp={{ item.public_ip }}
-        insertafter="[Nodes]" line="Master {{ item.public_ip }}  {{hoststring}}"
+        dest={{ hostpath }} regexp={{ eip_master.public_ip }}
+        insertafter="[Nodes]" line="Master {{ eip_master.public_ip }}  {{hoststring}}"
         state=present
-      with_items: '{{master_node.instances}}'
+      with_items: '{{eip_master.instances}}'
     - name: Add the newly created EC2 Nodes instance(s) to host group
       lineinfile: >-
         dest={{ hostpath }} regexp={{ item.public_ip }}
