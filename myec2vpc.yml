@@ -2,7 +2,7 @@
   vars:
     region: us-east-1
     image_id:  ami-09e67e426f25ce0d7
-    instance_type: t2.micro
+    instance_type: t2.mediun
     project_name: easypay
     app_code_user: ubuntu
     env: staging
