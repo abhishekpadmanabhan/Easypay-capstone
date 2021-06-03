@@ -18,6 +18,5 @@ sudo apt-get update ; clear
 sudo apt-get install -y kubelet kubeadm kubectl	
 ### check the version
 
-docker -v  ;  echo "kubeadm version: "  'kubeadm version -o short';  echo " kubelet --version" 'kubelet --version' ; echo "kubectl version" ; kubectl version --short 
-
-
+docker -v  ;  echo "kubeadm version: "  'kubeadm version -o short';  echo " kubelet --version" 'kubelet --version' ; 
+echo "kubectl version" ; kubectl version --short 
