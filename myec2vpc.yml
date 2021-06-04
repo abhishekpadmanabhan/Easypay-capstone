@@ -82,15 +82,6 @@
           Name: Master
         state: present
       register: master_node
-    - name: associate new elastic IPs with each of the instances
-      ec2_eip:
-        device_id: "{{ item }}"
-        region: '{{ region }}'
-        in_vpc: yes
-        reuse_existing_ip_allowed: yes
-        state: present
-      with_items: "{{ master_node.instance_ids }}"
-      register: eip_master
     - name: Creating nodes in ec2 instance
       ec2:
         key_name: '{{ project_name }}-{{ env }}-key'
@@ -106,16 +97,6 @@
           Name: Nodes
         state: present
       register: worker_nodes
-    - name: associate new elastic IPs with each of the instances
-      ec2_eip:
-        device_id: "{{ item }}"
-        region: '{{ region }}'
-        in_vpc: yes
-        reuse_existing_ip_allowed: yes
-        state: present
-      with_items: "{{ worker_nodes.instance_ids }}"
-      register: eip_nodes
-
     - name: Add the newly created EC2 Master instance(s) to host group
       lineinfile: >-
         dest={{ hostpath }} regexp={{ item.public_ip }}
