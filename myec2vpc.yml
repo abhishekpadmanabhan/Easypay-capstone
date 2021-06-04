@@ -116,9 +116,8 @@
       lineinfile: 
         path: '{{hostpath}}'
         regexp: '\[masters\]'
-        insertafter: '\[masters\]'
-        line: '[masters]'
-        line: '{{ item.public_ip }}  {{hoststring}}'
+        insertafter: '^\]'
+        line: '[masters]\n chr(10) {{ item.public_ip }}  {{hoststring}}'
         state: present
       with_items: '{{master_node.instances}}'
     - wait_for: 'path={{ hostpath }} search_regex={{hoststring}}'
