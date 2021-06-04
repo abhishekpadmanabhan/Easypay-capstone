@@ -43,9 +43,10 @@
          - docker-ce-cli
          - containerd.io
        state: present
-   - name: update docker config
-     command: "mkdir /etc/docker"
-    
+   - name: Enable service docker, and enable persistently
+     service: 
+       name: docker
+       enabled: yes
    - name: update docker config
      command: >-
       cat <<EOF | sudo tee /etc/docker/daemon.json
@@ -59,11 +60,6 @@
         }
         EOF
      run_once: true
-
-   - name: Enable service docker, and enable persistently
-     service: 
-       name: docker
-       enabled: yes
    - name: Add Google official GPG key
      apt_key:
        url: https://packages.cloud.google.com/apt/doc/apt-key.gpg
