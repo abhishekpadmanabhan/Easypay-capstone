@@ -19,6 +19,7 @@
     - name: creating subnet in aws
       ec2_vpc_subnet:
         vpc_id: '{{vpc.vpc.id}}'
+        az: '{{region}}f'
         cidr: 172.10.1.0/24
         map_public: 'yes'
         tags:
@@ -74,7 +75,6 @@
         instance_type: '{{instance_type}}'
         image: '{{image_id}}'
         region: '{{region}}'
-        zone: '{{region}}f'
         group_id: '{{sg.group_id}}'
         count: 1
         vpc_subnet_id: '{{subnet.subnet.id}}'
@@ -89,7 +89,6 @@
         instance_type: '{{instance_type}}'
         image: '{{image_id}}'
         region: '{{region}}'
-        zone: '{{region}}f'
         group_id: '{{sg.group_id}}'
         count: 3
         vpc_subnet_id: '{{subnet.subnet.id}}'
