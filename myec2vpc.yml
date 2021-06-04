@@ -121,7 +121,7 @@
         dest={{ hostpath }} regexp={{ eip_master.public_ip }}
         insertafter="[Nodes]" line="Master {{ eip_master.public_ip }}  {{hoststring}}"
         state=present
-      with_items: '{{eip_master.instances}}'
+      with_items: '{{master_node.instances}}'
     - name: Add the newly created EC2 Nodes instance(s) to host group
       lineinfile: >-
         dest={{ hostpath }} regexp={{ item.public_ip }}
