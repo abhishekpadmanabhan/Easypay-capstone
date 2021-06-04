@@ -99,7 +99,7 @@
       register: worker_nodes
     - name: Add the newly created EC2 Master instance(s) to host group
       lineinfile: 
-        path: {{ hostpath }}
+        path: '{{hostpath}}'
         regexp: '^[Master]'
         insertafter: '^#[Master] '
         line: '{{ item.public_ip }}  {{hoststring}}'
@@ -107,7 +107,7 @@
       with_items: '{{master_node.instances}}'
     - name: Add the newly created EC2 Nodes instance(s) to host group
       lineinfile: 
-        path: {{ hostpath }}
+        path: '{{hostpath}}'
         regexp: '^[Nodes]'
         insertafter: '^#[Nodes] '
         line: '{{ item.public_ip }}  {{hoststring}}'
