@@ -74,7 +74,7 @@
         instance_type: '{{instance_type}}'
         image: '{{image_id}}'
         availability_zone: '{{region}}f' 
-        region: '{{region}}'
+        region: '{{region}}f'
         group_id: '{{sg.group_id}}'
         count: 1
         vpc_subnet_id: '{{subnet.subnet.id}}'
@@ -88,8 +88,7 @@
         key_name: '{{ project_name }}-{{ env }}-key'
         instance_type: '{{instance_type}}'
         image: '{{image_id}}'
-        availability_zone: '{{region}}f' 
-        region: '{{region}}'
+        region: '{{region}f}'
         group_id: '{{sg.group_id}}'
         count: 3
         vpc_subnet_id: '{{subnet.subnet.id}}'
