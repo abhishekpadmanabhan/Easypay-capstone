@@ -1,5 +1,5 @@
 ---
-- hosts: nSodes
+- hosts: nodes
   become: yes
   vars_prompt:
    - name: "ansible_user"
