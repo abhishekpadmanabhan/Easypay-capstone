@@ -105,19 +105,25 @@
         line: '{{ item.public_ip }}  {{hoststring}}'
         state: present
       with_items: '{{worker_nodes.instances}}'
-    - name: Add the newly created EC2 Master instance(s) to host group
+    - name: Add the newly created EC2 Master instance(s) to nodes group
       lineinfile: 
         path: '{{hostpath}}'
         insertafter: 'EOF'
         line: '{{ item.public_ip }}  {{hoststring}}'
         state: present
       with_items: '{{master_node.instances}}'
-    - name: Add the newly created EC2 Master instance(s) to host group
+    - name: Add the newly created EC2 Master instance(s) to masters group
       lineinfile: 
         path: '{{hostpath}}'
-        regexp: '\[masters\]'
-        insertafter: '^\]'
-        line: '[masters]\n chr(10) {{ item.public_ip }}  {{hoststring}}'
+        insertafter: 'EOF'
+        line: '[masters]'
+        state: present
+      with_items: '{{master_node.instances}}'
+    - name: Add the newly created EC2 Master instance(s) to masters group
+      lineinfile: 
+        path: '{{hostpath}}'
+        insertafter: 'EOF'
+        line: ':{{ item.public_ip }}  {{hoststring}}'
         state: present
       with_items: '{{master_node.instances}}'
     - wait_for: 'path={{ hostpath }} search_regex={{hoststring}}'
