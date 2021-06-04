@@ -73,7 +73,6 @@
         key_name: '{{ project_name }}-{{ env }}-key'
         instance_type: '{{instance_type}}'
         image: '{{image_id}}'
-        availability_zone: '{{region}}f' 
         region: '{{region}}f'
         group_id: '{{sg.group_id}}'
         count: 1
