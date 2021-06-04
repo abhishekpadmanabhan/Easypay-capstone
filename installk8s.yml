@@ -47,19 +47,6 @@
      service: 
        name: docker
        enabled: yes
-   - name: update docker config
-     command: >-
-      cat <<EOF | sudo tee /etc/docker/daemon.json
-        {
-          "exec-opts": ["native.cgroupdriver=systemd"],
-          "log-driver": "json-file",
-          "log-opts": {
-            "max-size": "100m"
-          },
-          "storage-driver": "overlay2"
-        }
-        EOF
-     run_once: true
    - name: Add Google official GPG key
      apt_key:
        url: https://packages.cloud.google.com/apt/doc/apt-key.gpg
@@ -87,4 +74,17 @@
        reboot_timeout: 40
        connect_timeout: 60
        test_command: uptime
+   - name: update docker config
+     command: >-
+      cat <<EOF | sudo tee /etc/docker/daemon.json
+        {
+          "exec-opts": ["native.cgroupdriver=systemd"],
+          "log-driver": "json-file",
+          "log-opts": {
+            "max-size": "100m"
+          },
+          "storage-driver": "overlay2"
+        }
+        EOF
+     run_once: true
 ...
