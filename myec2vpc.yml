@@ -101,16 +101,14 @@
     - name: Add the newly created EC2 Nodes instance(s) to host group
       lineinfile: 
         path: '{{hostpath}}'
-        regexp: '^[nodes]'
-        insertafter: '^\t[nodes]\n '
+        insertafter: EOF
         line: '{{ item.public_ip }}  {{hoststring}}'
         state: present
       with_items: '{{worker_nodes.instances}}'
     - name: Add the newly created EC2 Master instance(s) to host group
       lineinfile: 
         path: '{{hostpath}}'
-        regexp: '\[nodes\]'
-        insertafter: '\[nodes\]'
+        insertafter: 'EOF'
         line: '{{ item.public_ip }}  {{hoststring}}'
         state: present
       with_items: '{{master_node.instances}}'
@@ -119,6 +117,7 @@
         path: '{{hostpath}}'
         regexp: '\[masters\]'
         insertafter: '\[masters\]'
+        line: '[masters]'
         line: '{{ item.public_ip }}  {{hoststring}}'
         state: present
       with_items: '{{master_node.instances}}'
