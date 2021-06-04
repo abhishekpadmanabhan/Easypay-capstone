@@ -23,7 +23,7 @@
         cidr: 172.10.1.0/24
         map_public: 'yes'
         tags:
-          Name: subnet-ma
+          Name: subnet-ma_new
         state: present
         region: '{{region}}'
       register: subnet
