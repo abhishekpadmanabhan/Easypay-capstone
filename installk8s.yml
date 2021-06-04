@@ -1,5 +1,5 @@
 ---
-- hosts: "Nodes"
+- hosts: "nodes"
   remote_user: ma_ansible
   become: yes
   become_method: sudo
