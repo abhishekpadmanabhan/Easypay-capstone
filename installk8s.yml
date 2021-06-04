@@ -43,7 +43,7 @@
          - docker-ce-cli
          - containerd.io
        state: present
-  - name: update docker config
+   - name: update docker config
      command: "mkdir /etc/docker"
     
    - name: update docker config
