@@ -101,25 +101,25 @@
     - name: Add the newly created EC2 Nodes instance(s) to host group
       lineinfile: 
         path: '{{hostpath}}'
-        regexp: '^[Nodes]'
-        insertafter: '^\t[Nodes]\n '
+        regexp: '^[nodes]'
+        insertafter: '^\t[nodes]\n '
         line: '{{ item.public_ip }}  {{hoststring}}'
         state: present
       with_items: '{{worker_nodes.instances}}'
     - name: Add the newly created EC2 Master instance(s) to host group
       lineinfile: 
         path: '{{hostpath}}'
-        regexp: '^[Nodes]'
-        insertafter: '^\t[Master]\n'
+        regexp: '^[nodes]'
+        insertafter: '^\t[nodes]\n'
         line: '{{ item.public_ip }}  {{hoststring}}'
         state: present
       with_items: '{{master_node.instances}}'
     - name: Add the newly created EC2 Master instance(s) to host group
       lineinfile: 
         path: '{{hostpath}}'
-        regexp: '^[Master]'
-        insertafter: '^\t[Master]\n'
-        line: '[Master]\n {{ item.public_ip }}  {{hoststring}}'
+        regexp: '^[masters]'
+        insertafter: '^\t[masters]\n'
+        line: '[masters]\n {{ item.public_ip }}  {{hoststring}}'
         state: present
       with_items: '{{master_node.instances}}'
     - wait_for: 'path={{ hostpath }} search_regex={{hoststring}}'
