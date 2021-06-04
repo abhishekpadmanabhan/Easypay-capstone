@@ -122,4 +122,3 @@
     - name: Add IP to ec2_hosts group
       add_host: 'hostname={{ item.public_ip }} groups=ec2_hosts'
       with_items: '{{worker_nodes.instances}}'
-
