@@ -8,7 +8,7 @@
   connection: ssh
   tasks:
    - name: Intilizing Kubernetes Cluster
-     command: kubeadm init  "--ignore-preflight-errors=Mem" "--pod-network-cidr=192.168.0.0/16" "--apiserver-advertise-address=0.0.0.0" "--apiserver-cert-extra-sans={{ ansible_ssh_host }}:"
+     command: kubeadm init  "--ignore-preflight-errors=Mem" "--pod-network-cidr=192.168.0.0/16" "--apiserver-advertise-address=0.0.0.0" "--apiserver-cert-extra-sans={{ ansible_ssh_host }}"
      run_once: true
    - pause: seconds=30
    - name: Create directory for kube config.
