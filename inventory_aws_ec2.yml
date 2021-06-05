@@ -2,8 +2,6 @@ plugin: amazon.aws.aws_ec2
 aws_profile: default
 regions:
   - us-east-1
-hostnames:
-  - name: 'public-ip-address'
 keyed_groups:
   - key: tags.Name
   - key: tags.task
