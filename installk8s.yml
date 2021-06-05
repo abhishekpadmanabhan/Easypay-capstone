@@ -44,7 +44,7 @@
        state: present
    - name: create a directory in /etc/docker
      file: name=/etc/docker state=directory owner=ansible mode=0700
-    ignore_errors: yes
+     ignore_errors: yes
    - name: update docker config
      command: >-
       cat <<EOF | sudo tee /etc/docker/daemon.json
