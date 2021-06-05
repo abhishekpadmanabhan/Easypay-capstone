@@ -1,4 +1,5 @@
 sudo su -
+apt install acl
 kubeadm init  "--ignore-preflight-errors=Mem"
 mkdir -p $HOME/.kube
 cp -i /etc/kubernetes/admin.conf $HOME/.kube/config 

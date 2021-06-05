@@ -19,6 +19,7 @@
    - name: Installing Prerequisites for Kubernetes
      apt: 
        name:
+         - acl
          - apt-transport-https
          - ca-certificates
          - curl
