@@ -123,7 +123,7 @@
       lineinfile: 
         path: '{{hostpath}}'
         insertafter: 'EOF'
-        line: ':{{ item.public_ip }}  {{hoststring}}'
+        line: '{{ item.public_ip }}  {{hoststring}}'
         state: present
       with_items: '{{master_node.instances}}'
     - wait_for: 'path={{ hostpath }} search_regex={{hoststring}}'
