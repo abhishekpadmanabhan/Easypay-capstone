@@ -1,4 +1,4 @@
-plugin: aws_ec2
+plugin: amazon.aws.aws_ec2
 aws_profile: default
 regions:
   - us-east-1
@@ -6,4 +6,11 @@ filters:
   tag:Name:
     - Master
     - Nodes
-  instance-state-name : running
+keyed_groups:
+  # add hosts to tag_Name_value groups for each aws_ec2 host's tags.Name variable
+  - key: tags.Name
+    prefix: tag_Name_
+    separator: ""
+compose:
+  # set the ansible_host variable to connect with the private IP address without changing the hostname
+  ansible_host: public_ip_address
