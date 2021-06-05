@@ -1,6 +1,6 @@
 ---
 - name: ping them all
-  hosts: _servers
+  hosts: _Nodes
   vars:
     ansible_ssh_private_key_file: "../../Saws-private.pem"
   tasks:
