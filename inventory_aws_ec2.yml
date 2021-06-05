@@ -3,7 +3,7 @@ aws_profile: default
 regions:
   - us-east-1
 compose:
-  ansible_host: private_ip_address  
+  ansible_host: public_dns_name  
 keyed_groups:
   - key: tags.Name
   - key: tags.task
