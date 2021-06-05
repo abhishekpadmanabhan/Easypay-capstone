@@ -13,7 +13,7 @@
      become_method: sudo
      become_user: root
      copy:
-       src: /tmp/kubernetes_join_command
+       src: ../kubernetes_join_command
        dest: /tmp/kubernetes_join_command
        mode: 0777   
    - name: Join the Worker nodes with the master.
