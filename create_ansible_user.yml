@@ -1,6 +1,7 @@
 ---
 - hosts: all
   become: yes
+  become_user: root
   vars_prompt:
    - name: "ansible_user"
      prompt: "Account need to be create in remote server."
