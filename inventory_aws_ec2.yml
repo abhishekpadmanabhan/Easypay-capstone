@@ -9,5 +9,6 @@ filters:
   instance-state-name : running
 keyed_groups:
   - prefix: 
-    key: tags 
+    key: tags
+   
 
