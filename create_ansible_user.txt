@@ -1,0 +1,59 @@
+Account need to be create in remote server.: 
+PLAY [nodes] *******************************************************************
+
+TASK [Gathering Facts] *********************************************************
+ok: [18.232.179.107]
+ok: [3.83.35.25]
+ok: [3.94.129.121]
+ok: [3.236.251.70]
+
+TASK [creating the user ansible.] **********************************************
+changed: [3.94.129.121]
+changed: [18.232.179.107]
+changed: [3.83.35.25]
+changed: [3.236.251.70]
+
+TASK [Create a dedicated sudo entry file for the user.] ************************
+changed: [3.94.129.121]
+changed: [3.83.35.25]
+changed: [18.232.179.107]
+changed: [3.236.251.70]
+
+TASK [Setting up Sudo without Password for user ansible.] **********************
+changed: [3.94.129.121]
+changed: [3.236.251.70]
+changed: [3.83.35.25]
+changed: [18.232.179.107]
+
+TASK [Set authorized key for user copying it from current ansible  user.] ******
+changed: [3.83.35.25]
+changed: [3.94.129.121]
+changed: [3.236.251.70]
+changed: [18.232.179.107]
+
+TASK [Print the created user.] *************************************************
+changed: [3.236.251.70]
+changed: [18.232.179.107]
+changed: [3.94.129.121]
+changed: [3.83.35.25]
+
+TASK [debug] *******************************************************************
+ok: [3.83.35.25] => {
+    "msg": "uid=1001(ansible) gid=1001(ansible) groups=1001(ansible)"
+}
+ok: [18.232.179.107] => {
+    "msg": "uid=1001(ansible) gid=1001(ansible) groups=1001(ansible)"
+}
+ok: [3.236.251.70] => {
+    "msg": "uid=1001(ansible) gid=1001(ansible) groups=1001(ansible)"
+}
+ok: [3.94.129.121] => {
+    "msg": "uid=1001(ansible) gid=1001(ansible) groups=1001(ansible)"
+}
+
+PLAY RECAP *********************************************************************
+18.232.179.107             : ok=7    changed=5    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+3.236.251.70               : ok=7    changed=5    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+3.83.35.25                 : ok=7    changed=5    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+3.94.129.121               : ok=7    changed=5    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+
