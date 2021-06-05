@@ -7,12 +7,6 @@
   gather_facts: yes
   connection: ssh
   vars_prompt:
-   - name: "pod_network_cidr"
-     prompt: "Enter the Pod Network CIDR, example: 192.168.100.0/24"
-     private: no
-   - name: "k8s_master_ip"
-     prompt: "Enter the Apiserver advertise address, example: 192.168.0.26"
-     private: no
    - name: "pod_network_manifest_file"
      prompt: "Enter the Pod network manifest file URL, Your choice could be flannel, weave or calico, etc."
      private: no
@@ -21,7 +15,7 @@
      private: no 
   tasks:
    - name: Intilizing Kubernetes Cluster
-     command: kubeadm init --pod-network-cidr "{{ pod_network_cidr }}"  --apiserver-advertise-address "{{ k8s_master_ip }}" "--ignore-preflight-errors=Mem"
+     command: kubeadm init  "--ignore-preflight-errors=Mem"
      run_once: true
      delegate_to: "{{ k8s_master_ip }}"
    - pause: seconds=30
