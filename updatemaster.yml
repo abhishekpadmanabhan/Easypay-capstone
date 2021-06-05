@@ -16,7 +16,7 @@
      become_method: sudo
      become: yes
      file: 
-       path: "{{ ansible_env.HOME }}/.kube"
+       path: "/home/ansible/.kube"
        state: directory
        mode: 0755
    - name: Copy /etc/kubernetes/admin.conf to user's home directory /home/.kube/config.
@@ -25,7 +25,7 @@
      become: yes
      copy:
        src: /etc/kubernetes/admin.conf
-       dest: "{{ ansible_env.HOME }}/.kube/config"
+       dest: "/home/ansible/.kube/config"
        remote_src: yes
        mode: '0644'
    - pause: seconds=10
@@ -34,7 +34,7 @@
      become_method: sudo
      become: yes
      file: 
-       path: "{{ ansible_env.HOME }}/.kube/cache"
+       path: "/home/ansible/.kube/cache"
        state: absent
    - name: Create Pod Network & RBAC.
      become_user: ansible
