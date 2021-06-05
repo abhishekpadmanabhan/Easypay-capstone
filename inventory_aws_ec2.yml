@@ -3,12 +3,8 @@ aws_profile: default
 regions:
   - us-east-1
 filters:
-  tag:Name:
-    - Master
-    - Nodes
   instance-state-name : running
-keyed_groups:
-  - prefix: 
-    key: tags
+compose:
+  ansible_host: public_ip_address
    
 
