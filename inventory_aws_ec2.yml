@@ -4,11 +4,6 @@ regions:
   - us-east-1
 hostnames:
   - name: 'public-ip-address'
-filters:
-  tag:Name:
-    - Master
-    - Nodes
-  instance-state-name : running
 keyed_groups:
   - key: tags.Name
   - key: tags.task
