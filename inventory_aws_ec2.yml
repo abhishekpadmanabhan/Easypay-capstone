@@ -2,8 +2,12 @@ plugin: amazon.aws.aws_ec2
 aws_profile: default
 regions:
   - us-east-1
+filters:
+  tag:Name:
+    - Master
+    - Nodes
+  instance-state-name : running
 keyed_groups:
-  # add hosts to tag_Name_value groups for each aws_ec2 host's tags.Name variable
-  - key: tags.Name
- 
+  - prefix: 
+    key: tags 
 
