@@ -1,6 +1,6 @@
 ---
 - hosts: "nodes"
-  remote_user: ma_ansible
+  remote_user: ansible
   become: yes
   become_method: sudo
   become_user: root
