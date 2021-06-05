@@ -46,7 +46,7 @@
      file: path=/etc/docker state=directory
      ignore_errors: yes
    - name: update docker config
-     command: >-
+     shell: |
       cat <<EOF | sudo tee /etc/docker/daemon.json
         {
           "exec-opts": ["native.cgroupdriver=systemd"],
@@ -57,7 +57,8 @@
           "storage-driver": "overlay2"
         }
         EOF
-     run_once: true
+     args:
+      executable: /bin/bash
      ignore_errors: yes
    - name: Enable service docker, and enable persistently
      service: 
