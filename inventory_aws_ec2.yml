@@ -8,7 +8,7 @@ filters:
     - Nodes
   instance-state-name : running
 keyed_groups:
-  - prefix: 
+  - prefix: "hosts" 
     key: tags
 compose:
   ansible_host: public_ip_address   
