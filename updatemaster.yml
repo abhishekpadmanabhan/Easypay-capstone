@@ -50,8 +50,7 @@
   - name: Flannel Network Status
     debug:
         msg: "Flannel Network failed => {{ Flannel_status.failed }}"
-  - pause: seconds=30
-  - pause: seconds=30
+   - pause: seconds=30
   - name: Get the token for joining the nodes with Kuberentes master.
     shell: kubeadm token create  --print-join-command
     register: kubernetes_join_command
