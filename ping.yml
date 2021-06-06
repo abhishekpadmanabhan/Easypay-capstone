@@ -1,6 +1,6 @@
 ---
 - name: ping them all
-  hosts: _Nodes
+  hosts: all
   tasks:
     - name: pinging
       ping:

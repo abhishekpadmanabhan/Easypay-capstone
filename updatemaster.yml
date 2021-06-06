@@ -7,45 +7,51 @@
   gather_facts: yes
   connection: ssh
   tasks:
-   - name: Intilizing Kubernetes Cluster
+  - name: Intilizing Kubernetes Cluster
      command: kubeadm init "--config kubeadm-config.yaml" "--ignore-preflight-errors=Mem" "--pod-network-cidr=172.10.1.0/24" "--apiserver-advertise-address=172.10.1.146" "--apiserver-cert-extra-sans={{ ansible_ssh_host }}"
      run_once: true
-   - pause: seconds=30
-   - name: Create directory for kube config.
-     become_user: root
-     become_method: sudo
-     become: yes
-     file: 
-       path: .kube
-       state: directory
-       owner: "ubuntu"
-       group: "ubuntu"
-       mode: 0755
-   - name: Copy /etc/kubernetes/admin.conf to user's home directory /home/.kube/config.
-     become_user: root
-     become_method: sudo
-     become: yes
-     copy:
-       src: /etc/kubernetes/admin.conf
-       dest: ".kube/config"
-       remote_src: yes
-       mode: '0644'
-   - pause: seconds=10
-   - name: Remove the cache directory.
-     become_user: ubuntu
-     become_method: sudo
-     become: yes
-     file: 
-       path: ".kube/cache"
-       state: absent
-   - name: Create Pod Network & RBAC.
-     become_user: ubuntu
-     become_method: sudo
-     become: yes
-     command: "{{ item }}"
-     with_items: 
-        - kubectl apply -f "calico"
-        - kubectl apply -f "https://docs.projectcalico.org/v3.3/getting-started/kubernetes/installation/hosted/rbac-kdd.yam"
+  - pause: seconds=30
+
+  - name: Creating the required directories
+    file: 
+      path: "mkdir -p $HOME/.kube"
+      state: directory
+        #- "sudo chown $(id -u):$(id -g) $HOME/.kube/config"
+    register: KubeAdm_Commands_status
+
+  - name: KubeAdm Commands Status
+    debug:
+          msg: "{{ KubeAdm_Commands_status }}"
+
+  # Copying the required stuff after Kubeadm init successful
+  - name: Copy command of KubeAdm
+    shell:
+      cmd: sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
+    register: KubeAdm_CP_Commands_status
+
+  - name: KubeAdm Copy Commands Status
+    debug:
+          msg: "{{ KubeAdm_CP_Commands_status }}"
+
+  # Changing the ownership of the directories
+  - name: Changing ownership of directories
+    shell:
+      cmd: sudo chown $(id -u):$(id -g) $HOME/.kube/config
+    register: KubeAdm_Chaning_Ownership_Commands_status
+
+  - name: KubeAdm Changing ownership Commands Status
+    debug:
+        msg: "{{ KubeAdm_Chaning_Ownership_Commands_status }}"
+
+  # Adding the support of Flannel Network for Overlay Network
+  - name: Adding Flannel Network
+    command:
+      cmd: kubectl apply -f https://raw.githubusercontent.com/coreos/flannel/master/Documentation/kube-flannel.yml
+    register: Flannel_status
+
+  - name: Flannel Network Status
+    debug:
+        msg: "Flannel Network failed => {{ Flannel_status.failed }}"
    - pause: seconds=30
    - pause: seconds=30
    - name: Get the token for joining the nodes with Kuberentes master.
