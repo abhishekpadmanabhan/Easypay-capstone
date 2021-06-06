@@ -6,8 +6,6 @@
     project_name: easypay
     app_code_user: ubuntu
     env: staging
-    hoststring: ansible_ssh_user=ubuntu ansible_ssh_private_key_file=../aws-private.pem
-    hostpath: '../hosts'
   tasks:
     - name: creating vpc
       ec2_vpc_net:
@@ -98,7 +96,6 @@
           Name: Nodes
         state: present
       register: worker_nodes
-    - wait_for: 'path={{ hostpath }} search_regex={{hoststring}}'
     - name: associate new elastic IPs with each of the instances
       ec2_eip:
         device_id: "{{ item }}"
