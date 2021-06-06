@@ -44,7 +44,9 @@
      become: yes
      command: "{{ item }}"
      with_items: 
-        - kubectl apply -f  "https://cloud.weave.works/k8s/net"
+        - kubectl apply -f "calico"
+        - kubectl apply -f "https://docs.projectcalico.org/v3.3/getting-started/kubernetes/installation/hosted/rbac-kdd.yam"
+   - pause: seconds=30
    - pause: seconds=30
    - name: Get the token for joining the nodes with Kuberentes master.
      shell: kubeadm token create  --print-join-command
