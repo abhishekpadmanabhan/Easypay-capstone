@@ -66,7 +66,7 @@
       register: ec2_key
     - name: Save private key
       copy: content="{{ ec2_key.key.private_key }}" dest="../aws-private.pem" mode=0600
-    #  when: ec2_key.changed      
+      when: ec2_key.changed      
     - name: Creating Master node in ec2 instance
       ec2:
         key_name: '{{ project_name }}-{{ env }}-key'
