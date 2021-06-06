@@ -22,17 +22,16 @@
   - name: KubeAdm Commands Status
     debug:
           msg: "{{ KubeAdm_Commands_status }}"
-
-  # Copying the required stuff after Kubeadm init successful
-  - name: Copy command of KubeAdm
-    shell:
-      cmd: sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
-    register: KubeAdm_CP_Commands_status
-
-  - name: KubeAdm Copy Commands Status
-    debug:
-          msg: "{{ KubeAdm_CP_Commands_status }}"
-
+  - name: Copy /etc/kubernetes/admin.conf to user's home directory /home/.kube/config.
+    become_user: root
+    become_method: sudo
+    become: yes
+    copy:
+      src: /etc/kubernetes/admin.conf
+      dest: ".kube/config"
+      remote_src: yes
+      mode: '0644'
+  - pause: seconds=10
   # Changing the ownership of the directories
   - name: Changing ownership of directories
     shell:
