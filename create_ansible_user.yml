@@ -4,8 +4,6 @@
   become: yes
   become_method: sudo
   become_user: root
-  gather_facts: yes
-  connection: ssh
   vars_prompt:
    - name: "ansible_user"
      prompt: "Account need to be create in remote server."
