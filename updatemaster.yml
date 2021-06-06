@@ -1,5 +1,5 @@
 ---
-- hosts: masters
+- hosts: _master
   remote_user: ansible
   become: yes
   become_method: sudo
