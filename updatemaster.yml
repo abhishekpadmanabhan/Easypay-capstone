@@ -1,6 +1,6 @@
 ---
-- hosts: _master
-  remote_user: ansible
+- hosts: _Master
+  remote_user: ubuntu
   become: yes
   become_method: sudo
   become_user: root
