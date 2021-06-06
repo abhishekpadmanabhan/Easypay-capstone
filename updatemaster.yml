@@ -16,18 +16,18 @@
      become_method: sudo
      become: yes
      file: 
-       path: /home/ubuntu/.kube
+       path: .kube
        state: directory
        owner: "ubuntu"
        group: "ubuntu"
        mode: 0755
    - name: Copy /etc/kubernetes/admin.conf to user's home directory /home/.kube/config.
-     become_user: ubuntu
+     become_user: root
      become_method: sudo
      become: yes
      copy:
        src: /etc/kubernetes/admin.conf
-       dest: "/home/ubuntu/.kube/config"
+       dest: ".kube/config"
        remote_src: yes
        mode: '0644'
    - pause: seconds=10
@@ -36,7 +36,7 @@
      become_method: sudo
      become: yes
      file: 
-       path: "/home/ubuntu/.kube/cache"
+       path: ".kube/cache"
        state: absent
    - name: Create Pod Network & RBAC.
      become_user: ubuntu
