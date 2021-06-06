@@ -46,27 +46,53 @@
    - name: create a directory in /etc/docker
      file: path=/etc/docker state=directory
      ignore_errors: yes
-   - name: update docker config
-     shell: |
-      cat <<EOF | sudo tee /etc/docker/daemon.json
-        {
-          "exec-opts": ["native.cgroupdriver=systemd"],
-          "log-driver": "json-file",
-          "log-opts": {
-            "max-size": "100m"
-          },
-          "storage-driver": "overlay2"
-        }
-        EOF
-     args:
-      executable: /bin/bash
-     ignore_errors: yes
    - name: Enable service docker, and enable persistently
      service: 
        name: docker
        enabled: yes
    - name: start docker
      systemd: state=started name=docker daemon_reload=yes
+   # Downloading Docker-py Module for the Docker Pull to run on the managed node!
+   - name: Download docker-py Module
+     when: docker_service_status.state == "started"
+     pip:
+            name: "docker-py"
+            state: present
+     register: docker_py_status
+
+   - name: Docker-py Status
+     debug:
+            msg: "Docker Py Download Failed Status => {{ docker_py_status.failed}}"
+
+    # Changing the Docker Cgroup to systemd from cgroupfs which is supported by Kubernetes!
+   - name: Changing Docker Cgroup
+     when: docker_py_status.failed == False
+     blockinfile:
+        path: "/etc/docker/daemon.json"
+        create: yes
+        marker: ""
+        block:
+          "{\n
+            \"exec-opts\": [\"native.cgroupdriver=systemd\"]\n
+          }"
+     register: docker_CGroup_status
+
+   - name: Docker-py Status
+     debug:
+             msg: "Docker Cgroup Replacement Failed Status => {{ docker_CGroup_status.failed}}"
+    # Disabling Swap for Kubectl Efficient Working!
+   - name: Disabling Swap
+     when: docker_py_status.failed == False
+     replace:
+        dest: "/etc/fstab"
+        regexp: "^/dev/mapper/rhel-swap"
+        replace: "#/dev/mapper/rhel-swap"
+     register: Swap_Replace_status
+
+   - name: Swap_Replace Status
+     debug:
+             msg: "Swap Replace Failed Status => {{ Swap_Replace_status.failed }}"
+
    - name: Add Google official GPG key
      apt_key:
        url: https://packages.cloud.google.com/apt/doc/apt-key.gpg
