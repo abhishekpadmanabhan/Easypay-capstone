@@ -1,6 +1,6 @@
 ---
-- hosts: nodes
-  remote_user: ansible
+- hosts: _Nodes
+  remote_user: ubuntu
   become: yes
   become_method: sudo
   become_user: root
