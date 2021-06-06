@@ -1,5 +1,5 @@
 ansible-playbook [core 2.11.1] 
-  config file = /home/macharyaainsigh/Easypay-capstone/ansible.cfg
+  config file = /home/macharyaainsigh/repo/Easypay-capstone/ansible.cfg
   configured module search path = ['/home/macharyaainsigh/.ansible/plugins/modules', '/usr/share/ansible/plugins/modules']
   ansible python module location = /home/macharyaainsigh/.local/lib/python3.9/site-packages/ansible
   ansible collection location = /home/macharyaainsigh/.ansible/collections:/usr/share/ansible/collections
@@ -7,27 +7,10 @@ ansible-playbook [core 2.11.1]
   python version = 3.9.4 (default, Apr  9 2021, 01:15:05) [GCC 5.4.0 20160609]
   jinja version = 2.8
   libyaml = False
-Using /home/macharyaainsigh/Easypay-capstone/ansible.cfg as config file
-host_list declined parsing /home/macharyaainsigh/Easypay-capstone/inventory_aws_ec2.yml as it did not pass its verify_file() method
-script declined parsing /home/macharyaainsigh/Easypay-capstone/inventory_aws_ec2.yml as it did not pass its verify_file() method
-redirecting (type: inventory) ansible.builtin.aws_ec2 to amazon.aws.aws_ec2
-toml declined parsing /home/macharyaainsigh/Easypay-capstone/inventory_aws_ec2.yml as it did not pass its verify_file() method
-  File "/home/macharyaainsigh/.local/lib/python3.9/site-packages/ansible/inventory/manager.py", line 290, in parse_source
-    plugin.parse(self._inventory, self._loader, source, cache=cache)
-  File "/home/macharyaainsigh/.local/lib/python3.9/site-packages/ansible/plugins/inventory/auto.py", line 58, in parse
-    plugin.parse(inventory, loader, path, cache=cache)
-  File "/home/macharyaainsigh/.ansible/collections/ansible_collections/amazon/aws/plugins/inventory/aws_ec2.py", line 709, in parse
-    self._set_credentials(loader)
-  File "/home/macharyaainsigh/.ansible/collections/ansible_collections/amazon/aws/plugins/inventory/aws_ec2.py", line 682, in _set_credentials
-    raise AnsibleError("Insufficient boto credentials found. Please provide them in your "
-  File "/home/macharyaainsigh/.local/lib/python3.9/site-packages/ansible/inventory/manager.py", line 290, in parse_source
-    plugin.parse(self._inventory, self._loader, source, cache=cache)
-  File "/home/macharyaainsigh/.local/lib/python3.9/site-packages/ansible/plugins/inventory/yaml.py", line 112, in parse
-    raise AnsibleParserError('Plugin configuration YAML file, not YAML inventory')
-  File "/home/macharyaainsigh/.local/lib/python3.9/site-packages/ansible/inventory/manager.py", line 290, in parse_source
-    plugin.parse(self._inventory, self._loader, source, cache=cache)
-  File "/home/macharyaainsigh/.local/lib/python3.9/site-packages/ansible/plugins/inventory/ini.py", line 136, in parse
-    raise AnsibleParserError(e)
+Using /home/macharyaainsigh/repo/Easypay-capstone/ansible.cfg as config file
+host_list declined parsing /home/macharyaainsigh/repo/Easypay-capstone/inventory_aws_ec2.yml as it did not pass its verify_file() method
+script declined parsing /home/macharyaainsigh/repo/Easypay-capstone/inventory_aws_ec2.yml as it did not pass its verify_file() method
+Parsed /home/macharyaainsigh/repo/Easypay-capstone/inventory_aws_ec2.yml inventory source with auto plugin
 redirecting (type: modules) ansible.builtin.ec2_vpc_net to amazon.aws.ec2_vpc_net
 redirecting (type: modules) ansible.builtin.ec2_vpc_subnet to amazon.aws.ec2_vpc_subnet
 redirecting (type: modules) ansible.builtin.ec2_vpc_igw to community.aws.ec2_vpc_igw
@@ -36,6 +19,8 @@ redirecting (type: modules) ansible.builtin.ec2_group to amazon.aws.ec2_group
 redirecting (type: modules) ansible.builtin.ec2_key to amazon.aws.ec2_key
 redirecting (type: modules) ansible.builtin.ec2 to amazon.aws.ec2
 redirecting (type: modules) ansible.builtin.ec2 to amazon.aws.ec2
+redirecting (type: modules) ansible.builtin.ec2_eip to community.aws.ec2_eip
+redirecting (type: modules) ansible.builtin.ec2_eip to community.aws.ec2_eip
 Skipping callback 'default', as we already have a stdout callback.
 Skipping callback 'minimal', as we already have a stdout callback.
 Skipping callback 'oneline', as we already have a stdout callback.
@@ -46,31 +31,23 @@ PLAYBOOK: myec2vpc.yml *********************************************************
 PLAY [localhost] ***************************************************************
 
 TASK [Gathering Facts] *********************************************************
-task path: /home/macharyaainsigh/Easypay-capstone/myec2vpc.yml:1
-<127.0.0.1> ESTABLISH LOCAL CONNECTION FOR USER: macharyaainsigh
-<127.0.0.1> EXEC /bin/sh -c 'echo ~macharyaainsigh && sleep 0'
-<127.0.0.1> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo /home/macharyaainsigh/.ansible/tmp `"&& mkdir "` echo /home/macharyaainsigh/.ansible/tmp/ansible-tmp-1622902109.8023272-16258-229649376917457 `" && echo ansible-tmp-1622902109.8023272-16258-229649376917457="` echo /home/macharyaainsigh/.ansible/tmp/ansible-tmp-1622902109.8023272-16258-229649376917457 `" ) && sleep 0'
+task path: /home/macharyaainsigh/repo/Easypay-capstone/myec2vpc.yml:1
 Using module file /home/macharyaainsigh/.local/lib/python3.9/site-packages/ansible/modules/setup.py
-<127.0.0.1> PUT /home/macharyaainsigh/.ansible/tmp/ansible-local-13239s7l_zghw/tmp5ocml0y_ TO /home/macharyaainsigh/.ansible/tmp/ansible-tmp-1622902109.8023272-16258-229649376917457/AnsiballZ_setup.py
-<127.0.0.1> EXEC /bin/sh -c 'chmod u+x /home/macharyaainsigh/.ansible/tmp/ansible-tmp-1622902109.8023272-16258-229649376917457/ /home/macharyaainsigh/.ansible/tmp/ansible-tmp-1622902109.8023272-16258-229649376917457/AnsiballZ_setup.py && sleep 0'
-<127.0.0.1> EXEC /bin/sh -c '/usr/bin/python /home/macharyaainsigh/.ansible/tmp/ansible-tmp-1622902109.8023272-16258-229649376917457/AnsiballZ_setup.py && sleep 0'
-<127.0.0.1> EXEC /bin/sh -c 'rm -f -r /home/macharyaainsigh/.ansible/tmp/ansible-tmp-1622902109.8023272-16258-229649376917457/ > /dev/null 2>&1 && sleep 0'
+Pipelining is enabled.
+<127.0.0.1> ESTABLISH LOCAL CONNECTION FOR USER: macharyaainsigh
+<127.0.0.1> EXEC /bin/sh -c '/usr/bin/python && sleep 0'
 ok: [localhost]
 META: ran handlers
 
 TASK [creating vpc] ************************************************************
-task path: /home/macharyaainsigh/Easypay-capstone/myec2vpc.yml:12
-<127.0.0.1> ESTABLISH LOCAL CONNECTION FOR USER: macharyaainsigh
-<127.0.0.1> EXEC /bin/sh -c 'echo ~macharyaainsigh && sleep 0'
-<127.0.0.1> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo /home/macharyaainsigh/.ansible/tmp `"&& mkdir "` echo /home/macharyaainsigh/.ansible/tmp/ansible-tmp-1622902111.1704214-17213-231555145611849 `" && echo ansible-tmp-1622902111.1704214-17213-231555145611849="` echo /home/macharyaainsigh/.ansible/tmp/ansible-tmp-1622902111.1704214-17213-231555145611849 `" ) && sleep 0'
+task path: /home/macharyaainsigh/repo/Easypay-capstone/myec2vpc.yml:10
 redirecting (type: modules) ansible.builtin.ec2_vpc_net to amazon.aws.ec2_vpc_net
 Using module file /home/macharyaainsigh/.ansible/collections/ansible_collections/amazon/aws/plugins/modules/ec2_vpc_net.py
-<127.0.0.1> PUT /home/macharyaainsigh/.ansible/tmp/ansible-local-13239s7l_zghw/tmpbufpr31y TO /home/macharyaainsigh/.ansible/tmp/ansible-tmp-1622902111.1704214-17213-231555145611849/AnsiballZ_ec2_vpc_net.py
-<127.0.0.1> EXEC /bin/sh -c 'chmod u+x /home/macharyaainsigh/.ansible/tmp/ansible-tmp-1622902111.1704214-17213-231555145611849/ /home/macharyaainsigh/.ansible/tmp/ansible-tmp-1622902111.1704214-17213-231555145611849/AnsiballZ_ec2_vpc_net.py && sleep 0'
-<127.0.0.1> EXEC /bin/sh -c '/usr/bin/python /home/macharyaainsigh/.ansible/tmp/ansible-tmp-1622902111.1704214-17213-231555145611849/AnsiballZ_ec2_vpc_net.py && sleep 0'
-<127.0.0.1> EXEC /bin/sh -c 'rm -f -r /home/macharyaainsigh/.ansible/tmp/ansible-tmp-1622902111.1704214-17213-231555145611849/ > /dev/null 2>&1 && sleep 0'
-changed: [localhost] => {
-    "changed": true,
+Pipelining is enabled.
+<127.0.0.1> ESTABLISH LOCAL CONNECTION FOR USER: macharyaainsigh
+<127.0.0.1> EXEC /bin/sh -c '/usr/bin/python && sleep 0'
+ok: [localhost] => {
+    "changed": false,
     "debugging": {
         "expected_cidrs": [
             "172.10.0.0/16"
@@ -130,18 +107,14 @@ changed: [localhost] => {
 }
 
 TASK [creating subnet in aws] **************************************************
-task path: /home/macharyaainsigh/Easypay-capstone/myec2vpc.yml:19
-<127.0.0.1> ESTABLISH LOCAL CONNECTION FOR USER: macharyaainsigh
-<127.0.0.1> EXEC /bin/sh -c 'echo ~macharyaainsigh && sleep 0'
-<127.0.0.1> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo /home/macharyaainsigh/.ansible/tmp `"&& mkdir "` echo /home/macharyaainsigh/.ansible/tmp/ansible-tmp-1622902113.9405975-19248-234133578853977 `" && echo ansible-tmp-1622902113.9405975-19248-234133578853977="` echo /home/macharyaainsigh/.ansible/tmp/ansible-tmp-1622902113.9405975-19248-234133578853977 `" ) && sleep 0'
+task path: /home/macharyaainsigh/repo/Easypay-capstone/myec2vpc.yml:17
 redirecting (type: modules) ansible.builtin.ec2_vpc_subnet to amazon.aws.ec2_vpc_subnet
 Using module file /home/macharyaainsigh/.ansible/collections/ansible_collections/amazon/aws/plugins/modules/ec2_vpc_subnet.py
-<127.0.0.1> PUT /home/macharyaainsigh/.ansible/tmp/ansible-local-13239s7l_zghw/tmpt4h_sriq TO /home/macharyaainsigh/.ansible/tmp/ansible-tmp-1622902113.9405975-19248-234133578853977/AnsiballZ_ec2_vpc_subnet.py
-<127.0.0.1> EXEC /bin/sh -c 'chmod u+x /home/macharyaainsigh/.ansible/tmp/ansible-tmp-1622902113.9405975-19248-234133578853977/ /home/macharyaainsigh/.ansible/tmp/ansible-tmp-1622902113.9405975-19248-234133578853977/AnsiballZ_ec2_vpc_subnet.py && sleep 0'
-<127.0.0.1> EXEC /bin/sh -c '/usr/bin/python /home/macharyaainsigh/.ansible/tmp/ansible-tmp-1622902113.9405975-19248-234133578853977/AnsiballZ_ec2_vpc_subnet.py && sleep 0'
-<127.0.0.1> EXEC /bin/sh -c 'rm -f -r /home/macharyaainsigh/.ansible/tmp/ansible-tmp-1622902113.9405975-19248-234133578853977/ > /dev/null 2>&1 && sleep 0'
-changed: [localhost] => {
-    "changed": true,
+Pipelining is enabled.
+<127.0.0.1> ESTABLISH LOCAL CONNECTION FOR USER: macharyaainsigh
+<127.0.0.1> EXEC /bin/sh -c '/usr/bin/python && sleep 0'
+ok: [localhost] => {
+    "changed": false,
     "invocation": {
         "module_args": {
             "assign_instances_ipv6": false,
@@ -173,10 +146,10 @@ changed: [localhost] => {
         "assign_ipv6_address_on_creation": false,
         "availability_zone": "us-east-1f",
         "availability_zone_id": "use1-az5",
-        "available_ip_address_count": 251,
+        "available_ip_address_count": 250,
         "cidr_block": "172.10.1.0/24",
         "default_for_az": false,
-        "id": "subnet-00d087ed6da2dce23",
+        "id": "subnet-0c9ee11f07f195c38",
         "ipv6_association_id": "",
         "ipv6_cidr_block": "",
         "ipv6_cidr_block_association_set": [],
@@ -184,7 +157,7 @@ changed: [localhost] => {
         "map_public_ip_on_launch": true,
         "owner_id": "436174799454",
         "state": "available",
-        "subnet_arn": "arn:aws:ec2:us-east-1:436174799454:subnet/subnet-00d087ed6da2dce23",
+        "subnet_arn": "arn:aws:ec2:us-east-1:436174799454:subnet/subnet-0c9ee11f07f195c38",
         "tags": {
             "Name": "subnet-ma_new"
         },
@@ -193,19 +166,15 @@ changed: [localhost] => {
 }
 
 TASK [creating igw] ************************************************************
-task path: /home/macharyaainsigh/Easypay-capstone/myec2vpc.yml:30
-<127.0.0.1> ESTABLISH LOCAL CONNECTION FOR USER: macharyaainsigh
-<127.0.0.1> EXEC /bin/sh -c 'echo ~macharyaainsigh && sleep 0'
-<127.0.0.1> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo /home/macharyaainsigh/.ansible/tmp `"&& mkdir "` echo /home/macharyaainsigh/.ansible/tmp/ansible-tmp-1622902115.887497-20659-43497109451474 `" && echo ansible-tmp-1622902115.887497-20659-43497109451474="` echo /home/macharyaainsigh/.ansible/tmp/ansible-tmp-1622902115.887497-20659-43497109451474 `" ) && sleep 0'
+task path: /home/macharyaainsigh/repo/Easypay-capstone/myec2vpc.yml:28
 redirecting (type: modules) ansible.builtin.ec2_vpc_igw to community.aws.ec2_vpc_igw
 Using module file /home/macharyaainsigh/.ansible/collections/ansible_collections/community/aws/plugins/modules/ec2_vpc_igw.py
-<127.0.0.1> PUT /home/macharyaainsigh/.ansible/tmp/ansible-local-13239s7l_zghw/tmpyjkr090r TO /home/macharyaainsigh/.ansible/tmp/ansible-tmp-1622902115.887497-20659-43497109451474/AnsiballZ_ec2_vpc_igw.py
-<127.0.0.1> EXEC /bin/sh -c 'chmod u+x /home/macharyaainsigh/.ansible/tmp/ansible-tmp-1622902115.887497-20659-43497109451474/ /home/macharyaainsigh/.ansible/tmp/ansible-tmp-1622902115.887497-20659-43497109451474/AnsiballZ_ec2_vpc_igw.py && sleep 0'
-<127.0.0.1> EXEC /bin/sh -c '/usr/bin/python /home/macharyaainsigh/.ansible/tmp/ansible-tmp-1622902115.887497-20659-43497109451474/AnsiballZ_ec2_vpc_igw.py && sleep 0'
-<127.0.0.1> EXEC /bin/sh -c 'rm -f -r /home/macharyaainsigh/.ansible/tmp/ansible-tmp-1622902115.887497-20659-43497109451474/ > /dev/null 2>&1 && sleep 0'
-changed: [localhost] => {
-    "changed": true,
-    "gateway_id": "igw-0e845b0d23c613c58",
+Pipelining is enabled.
+<127.0.0.1> ESTABLISH LOCAL CONNECTION FOR USER: macharyaainsigh
+<127.0.0.1> EXEC /bin/sh -c '/usr/bin/python && sleep 0'
+ok: [localhost] => {
+    "changed": false,
+    "gateway_id": "igw-04f9b747f502a6c1a",
     "invocation": {
         "module_args": {
             "aws_access_key": null,
@@ -233,18 +202,14 @@ changed: [localhost] => {
 }
 
 TASK [creating route table] ****************************************************
-task path: /home/macharyaainsigh/Easypay-capstone/myec2vpc.yml:38
-<127.0.0.1> ESTABLISH LOCAL CONNECTION FOR USER: macharyaainsigh
-<127.0.0.1> EXEC /bin/sh -c 'echo ~macharyaainsigh && sleep 0'
-<127.0.0.1> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo /home/macharyaainsigh/.ansible/tmp `"&& mkdir "` echo /home/macharyaainsigh/.ansible/tmp/ansible-tmp-1622902117.3074152-21667-139297243080436 `" && echo ansible-tmp-1622902117.3074152-21667-139297243080436="` echo /home/macharyaainsigh/.ansible/tmp/ansible-tmp-1622902117.3074152-21667-139297243080436 `" ) && sleep 0'
+task path: /home/macharyaainsigh/repo/Easypay-capstone/myec2vpc.yml:36
 redirecting (type: modules) ansible.builtin.ec2_vpc_route_table to community.aws.ec2_vpc_route_table
 Using module file /home/macharyaainsigh/.ansible/collections/ansible_collections/community/aws/plugins/modules/ec2_vpc_route_table.py
-<127.0.0.1> PUT /home/macharyaainsigh/.ansible/tmp/ansible-local-13239s7l_zghw/tmpg978iffs TO /home/macharyaainsigh/.ansible/tmp/ansible-tmp-1622902117.3074152-21667-139297243080436/AnsiballZ_ec2_vpc_route_table.py
-<127.0.0.1> EXEC /bin/sh -c 'chmod u+x /home/macharyaainsigh/.ansible/tmp/ansible-tmp-1622902117.3074152-21667-139297243080436/ /home/macharyaainsigh/.ansible/tmp/ansible-tmp-1622902117.3074152-21667-139297243080436/AnsiballZ_ec2_vpc_route_table.py && sleep 0'
-<127.0.0.1> EXEC /bin/sh -c '/usr/bin/python /home/macharyaainsigh/.ansible/tmp/ansible-tmp-1622902117.3074152-21667-139297243080436/AnsiballZ_ec2_vpc_route_table.py && sleep 0'
-<127.0.0.1> EXEC /bin/sh -c 'rm -f -r /home/macharyaainsigh/.ansible/tmp/ansible-tmp-1622902117.3074152-21667-139297243080436/ > /dev/null 2>&1 && sleep 0'
-changed: [localhost] => {
-    "changed": true,
+Pipelining is enabled.
+<127.0.0.1> ESTABLISH LOCAL CONNECTION FOR USER: macharyaainsigh
+<127.0.0.1> EXEC /bin/sh -c '/usr/bin/python && sleep 0'
+ok: [localhost] => {
+    "changed": false,
     "invocation": {
         "module_args": {
             "aws_access_key": null,
@@ -264,13 +229,13 @@ changed: [localhost] => {
             "routes": [
                 {
                     "destination_cidr_block": "0.0.0.0/0",
-                    "gateway_id": "igw-0e845b0d23c613c58"
+                    "gateway_id": "igw-04f9b747f502a6c1a"
                 }
             ],
             "security_token": null,
             "state": "present",
             "subnets": [
-                "subnet-00d087ed6da2dce23"
+                "subnet-0c9ee11f07f195c38"
             ],
             "tags": {
                 "Name": "route-ma"
@@ -286,15 +251,15 @@ changed: [localhost] => {
                     "state": "associated"
                 },
                 "main": false,
-                "route_table_association_id": "rtbassoc-076b50933a04d92c6",
-                "route_table_id": "rtb-0bd8f106c1e168396",
-                "subnet_id": "subnet-00d087ed6da2dce23"
+                "route_table_association_id": "rtbassoc-076c486de61f2bae8",
+                "route_table_id": "rtb-0ac5bf5d9eb0b344e",
+                "subnet_id": "subnet-0c9ee11f07f195c38"
             }
         ],
-        "id": "rtb-0bd8f106c1e168396",
+        "id": "rtb-0ac5bf5d9eb0b344e",
         "owner_id": "436174799454",
         "propagating_vgws": [],
-        "route_table_id": "rtb-0bd8f106c1e168396",
+        "route_table_id": "rtb-0ac5bf5d9eb0b344e",
         "routes": [
             {
                 "destination_cidr_block": "172.10.0.0/16",
@@ -304,7 +269,7 @@ changed: [localhost] => {
             },
             {
                 "destination_cidr_block": "0.0.0.0/0",
-                "gateway_id": "igw-0e845b0d23c613c58",
+                "gateway_id": "igw-04f9b747f502a6c1a",
                 "origin": "CreateRoute",
                 "state": "active"
             }
@@ -317,20 +282,16 @@ changed: [localhost] => {
 }
 
 TASK [creating security group] *************************************************
-task path: /home/macharyaainsigh/Easypay-capstone/myec2vpc.yml:51
-<127.0.0.1> ESTABLISH LOCAL CONNECTION FOR USER: macharyaainsigh
-<127.0.0.1> EXEC /bin/sh -c 'echo ~macharyaainsigh && sleep 0'
-<127.0.0.1> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo /home/macharyaainsigh/.ansible/tmp `"&& mkdir "` echo /home/macharyaainsigh/.ansible/tmp/ansible-tmp-1622902124.349208-26922-167937202207082 `" && echo ansible-tmp-1622902124.349208-26922-167937202207082="` echo /home/macharyaainsigh/.ansible/tmp/ansible-tmp-1622902124.349208-26922-167937202207082 `" ) && sleep 0'
+task path: /home/macharyaainsigh/repo/Easypay-capstone/myec2vpc.yml:49
 redirecting (type: modules) ansible.builtin.ec2_group to amazon.aws.ec2_group
 Using module file /home/macharyaainsigh/.ansible/collections/ansible_collections/amazon/aws/plugins/modules/ec2_group.py
-<127.0.0.1> PUT /home/macharyaainsigh/.ansible/tmp/ansible-local-13239s7l_zghw/tmpfm68soqh TO /home/macharyaainsigh/.ansible/tmp/ansible-tmp-1622902124.349208-26922-167937202207082/AnsiballZ_ec2_group.py
-<127.0.0.1> EXEC /bin/sh -c 'chmod u+x /home/macharyaainsigh/.ansible/tmp/ansible-tmp-1622902124.349208-26922-167937202207082/ /home/macharyaainsigh/.ansible/tmp/ansible-tmp-1622902124.349208-26922-167937202207082/AnsiballZ_ec2_group.py && sleep 0'
-<127.0.0.1> EXEC /bin/sh -c '/usr/bin/python /home/macharyaainsigh/.ansible/tmp/ansible-tmp-1622902124.349208-26922-167937202207082/AnsiballZ_ec2_group.py && sleep 0'
-<127.0.0.1> EXEC /bin/sh -c 'rm -f -r /home/macharyaainsigh/.ansible/tmp/ansible-tmp-1622902124.349208-26922-167937202207082/ > /dev/null 2>&1 && sleep 0'
-changed: [localhost] => {
-    "changed": true,
+Pipelining is enabled.
+<127.0.0.1> ESTABLISH LOCAL CONNECTION FOR USER: macharyaainsigh
+<127.0.0.1> EXEC /bin/sh -c '/usr/bin/python && sleep 0'
+ok: [localhost] => {
+    "changed": false,
     "description": "creating for custom vpc",
-    "group_id": "sg-001c358369eac93d3",
+    "group_id": "sg-0308c5100afa5d236",
     "group_name": "ma_sec_group",
     "invocation": {
         "module_args": {
@@ -399,18 +360,14 @@ changed: [localhost] => {
 }
 
 TASK [create an EC2 key] *******************************************************
-task path: /home/macharyaainsigh/Easypay-capstone/myec2vpc.yml:64
-<127.0.0.1> ESTABLISH LOCAL CONNECTION FOR USER: macharyaainsigh
-<127.0.0.1> EXEC /bin/sh -c 'echo ~macharyaainsigh && sleep 0'
-<127.0.0.1> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo /home/macharyaainsigh/.ansible/tmp `"&& mkdir "` echo /home/macharyaainsigh/.ansible/tmp/ansible-tmp-1622902129.218739-30560-50911307897225 `" && echo ansible-tmp-1622902129.218739-30560-50911307897225="` echo /home/macharyaainsigh/.ansible/tmp/ansible-tmp-1622902129.218739-30560-50911307897225 `" ) && sleep 0'
+task path: /home/macharyaainsigh/repo/Easypay-capstone/myec2vpc.yml:62
 redirecting (type: modules) ansible.builtin.ec2_key to amazon.aws.ec2_key
 Using module file /home/macharyaainsigh/.ansible/collections/ansible_collections/amazon/aws/plugins/modules/ec2_key.py
-<127.0.0.1> PUT /home/macharyaainsigh/.ansible/tmp/ansible-local-13239s7l_zghw/tmp9qpkut2f TO /home/macharyaainsigh/.ansible/tmp/ansible-tmp-1622902129.218739-30560-50911307897225/AnsiballZ_ec2_key.py
-<127.0.0.1> EXEC /bin/sh -c 'chmod u+x /home/macharyaainsigh/.ansible/tmp/ansible-tmp-1622902129.218739-30560-50911307897225/ /home/macharyaainsigh/.ansible/tmp/ansible-tmp-1622902129.218739-30560-50911307897225/AnsiballZ_ec2_key.py && sleep 0'
-<127.0.0.1> EXEC /bin/sh -c '/usr/bin/python /home/macharyaainsigh/.ansible/tmp/ansible-tmp-1622902129.218739-30560-50911307897225/AnsiballZ_ec2_key.py && sleep 0'
-<127.0.0.1> EXEC /bin/sh -c 'rm -f -r /home/macharyaainsigh/.ansible/tmp/ansible-tmp-1622902129.218739-30560-50911307897225/ > /dev/null 2>&1 && sleep 0'
-changed: [localhost] => {
-    "changed": true,
+Pipelining is enabled.
+<127.0.0.1> ESTABLISH LOCAL CONNECTION FOR USER: macharyaainsigh
+<127.0.0.1> EXEC /bin/sh -c '/usr/bin/python && sleep 0'
+ok: [localhost] => {
+    "changed": false,
     "invocation": {
         "module_args": {
             "aws_access_key": null,
@@ -432,85 +389,30 @@ changed: [localhost] => {
         }
     },
     "key": {
-        "fingerprint": "60:ed:9b:a6:05:99:f1:6d:67:a1:98:d9:2b:3a:28:4b:80:df:78:d8",
-        "name": "easypay-staging-key",
-        "private_key": "-----BEGIN RSA PRIVATE KEY-----\nMIIEowIBAAKCAQEAmKrulyACgw3lVyeZdebVzowhYdf7mMQ197iAqOmwNofV0rg8\neuO5jjACMND66NhCbBGeylOKGFGUR4dqexB4m9/wdMR5yEvPpivWo3Sb5Lnvcs1h\nLHPacGEQY+Nl4dKxdXGJyYwPoDkutVfGxs0FckajYKsRDRPK75mGc2R2y/8a1SZH\n/v1aCctDWYFOJfGVAIHJsnxPGrCdFbz0y0f/TaWI2f22ROX9/TbljjhiDaLukskg\nL9a42XcbwjZLq0+OOWbEC1whPq9SFtlmMntHxkVdW+Wog+6Sde7NDyRV7i7+K1Gw\nIB5GDwUQw0U81j4YHKDOhjjGs1Shmji70Ci53QIDAQABAoIBAQCDbp0LZBZlh0AL\nIV9ffoRRVpiiqJPE+B7SDnhNcyouOBEgYVZIIecsfy5TooZwkUXVzfGblAIOX6U9\nU1qbahm7cDaOAFwr0QCKubEGdayEZIK9ngzrfS3wk8/NfwbGPGJkjoOmDTuin7gT\njObnXbgzopai8YMzc/fBALYcf8A6bCLTEtRrNaP3p06fNDHXXGpWG/OklfAoZRCz\nL4j59Kk62kLZ4ys+FvklLcnDT0kJnEP53EGftqlCUZEZyvJipLf18aKEdkvhVeeL\nry0gb6WETTlUM+roQKwhnU4q6ByxAm8Cym8yGmDB3lgUT4OxDMw9YveNV6ozZusa\npCPLRyhtAoGBAOrb97SvAsNXYgUFZA9c/pLEB99IvQw/VNTEROVw7PNBQVGHBs5K\n5biwT3sKRedziy1waDle/PjN6DezCrBUsBUZ5AiBPnvOEBM+QTm8+Trkh61TRoCw\nVqwtj4sotzxlchN12fwyCkS5j4k1++2DHhBsls8A0BHQjStPBLKxrlwvAoGBAKZo\n9wEybnwMRFOcXgiNayGM6G/RHRgT2Ny/pvKoH1ShKdFQwAt8BFSeIZ79MpzBOcy/\nzwwfLVBnj+jr8BcJXZWBazMwKhFgFHjgLXPIajdMAGfxXeiP247rfcDz/vsaDwBY\np5zJiDA6/OjhAZoiKSPACDu/giUVl48v/xQf68uzAoGAeS73KWwEaPb1xNF7R9Ic\nKW6tATFvGpqzEvYS9rDGEt5g7chWYquSzTFsUXiDiWG9Nr0BiljQ/zB/2f2wTjvk\nf37Ugu7tZsR01vkQftJbZ1/0AiMuBcj3b/AyWQOxSKCvtArjZ5YKZlu5DHumem9l\nW+QsDLPGqOqLbQVgzzOPXFECgYAR0Jrg3e1GCmomKU9Hyxv084jOr6xVr4o/16Sf\nxa/U94vqhKKKmDQ+es9OnfyVG3p8mOwpeAz51pxpaxjA3pfOMZSwXi+ivI50gktb\nYdE9Kj3A4u4Sv5PZsQw9Y+GgMCH6/4KyHkEeKLJ6m9v4DEArO5umCdJ89drL0W+V\nT/WGUQKBgFkPLJ7hlY63O1Ij07d5CJna4rR5gYxD32dM+2MICv3sCrOyN2cN2eS3\nEkPSAL3v8R0An0ScbmPymlQIxJrY4aprsf6/SvVZ7Wi6zBw7rt7toV9CQQNBj6AW\nmBq9FDsGWkgzGd5+igvTF+uAFJ02DwsX0f7UsgdMs3tpJnclmpTT\n-----END RSA PRIVATE KEY-----"
+        "fingerprint": "07:b3:0e:3f:75:17:c6:62:3a:69:e8:f3:24:fd:aa:37:ee:b8:ba:e0",
+        "name": "easypay-staging-key"
     },
-    "msg": "key pair created"
+    "msg": "key pair already exists"
 }
 
 TASK [Save private key] ********************************************************
-task path: /home/macharyaainsigh/Easypay-capstone/myec2vpc.yml:69
-<127.0.0.1> ESTABLISH LOCAL CONNECTION FOR USER: macharyaainsigh
-<127.0.0.1> EXEC /bin/sh -c 'echo ~macharyaainsigh && sleep 0'
-<127.0.0.1> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo /home/macharyaainsigh/.ansible/tmp `"&& mkdir "` echo /home/macharyaainsigh/.ansible/tmp/ansible-tmp-1622902130.2084892-31264-108243992647204 `" && echo ansible-tmp-1622902130.2084892-31264-108243992647204="` echo /home/macharyaainsigh/.ansible/tmp/ansible-tmp-1622902130.2084892-31264-108243992647204 `" ) && sleep 0'
-Using module file /home/macharyaainsigh/.local/lib/python3.9/site-packages/ansible/modules/stat.py
-<127.0.0.1> PUT /home/macharyaainsigh/.ansible/tmp/ansible-local-13239s7l_zghw/tmp4dhpm_08 TO /home/macharyaainsigh/.ansible/tmp/ansible-tmp-1622902130.2084892-31264-108243992647204/AnsiballZ_stat.py
-<127.0.0.1> EXEC /bin/sh -c 'chmod u+x /home/macharyaainsigh/.ansible/tmp/ansible-tmp-1622902130.2084892-31264-108243992647204/ /home/macharyaainsigh/.ansible/tmp/ansible-tmp-1622902130.2084892-31264-108243992647204/AnsiballZ_stat.py && sleep 0'
-<127.0.0.1> EXEC /bin/sh -c '/usr/bin/python /home/macharyaainsigh/.ansible/tmp/ansible-tmp-1622902130.2084892-31264-108243992647204/AnsiballZ_stat.py && sleep 0'
-<127.0.0.1> PUT /home/macharyaainsigh/.ansible/tmp/ansible-local-13239s7l_zghw/tmp3wfp_9of TO /home/macharyaainsigh/.ansible/tmp/ansible-tmp-1622902130.2084892-31264-108243992647204/source
-<127.0.0.1> EXEC /bin/sh -c 'chmod u+x /home/macharyaainsigh/.ansible/tmp/ansible-tmp-1622902130.2084892-31264-108243992647204/ /home/macharyaainsigh/.ansible/tmp/ansible-tmp-1622902130.2084892-31264-108243992647204/source && sleep 0'
-Using module file /home/macharyaainsigh/.local/lib/python3.9/site-packages/ansible/modules/copy.py
-<127.0.0.1> PUT /home/macharyaainsigh/.ansible/tmp/ansible-local-13239s7l_zghw/tmp0g2vchdz TO /home/macharyaainsigh/.ansible/tmp/ansible-tmp-1622902130.2084892-31264-108243992647204/AnsiballZ_copy.py
-<127.0.0.1> EXEC /bin/sh -c 'chmod u+x /home/macharyaainsigh/.ansible/tmp/ansible-tmp-1622902130.2084892-31264-108243992647204/ /home/macharyaainsigh/.ansible/tmp/ansible-tmp-1622902130.2084892-31264-108243992647204/AnsiballZ_copy.py && sleep 0'
-<127.0.0.1> EXEC /bin/sh -c '/usr/bin/python /home/macharyaainsigh/.ansible/tmp/ansible-tmp-1622902130.2084892-31264-108243992647204/AnsiballZ_copy.py && sleep 0'
-<127.0.0.1> EXEC /bin/sh -c 'rm -f -r /home/macharyaainsigh/.ansible/tmp/ansible-tmp-1622902130.2084892-31264-108243992647204/ > /dev/null 2>&1 && sleep 0'
-changed: [localhost] => {
-    "changed": true,
-    "checksum": "312a71a9952cc1e925ed67e00b845ddd115b2976",
-    "dest": "../aws-private.pem",
-    "diff": [],
-    "gid": 1001,
-    "group": "macharyaainsigh",
-    "invocation": {
-        "module_args": {
-            "_original_basename": "tmp3wfp_9of",
-            "attributes": null,
-            "backup": false,
-            "checksum": "312a71a9952cc1e925ed67e00b845ddd115b2976",
-            "content": null,
-            "dest": "../aws-private.pem",
-            "directory_mode": null,
-            "follow": false,
-            "force": true,
-            "group": null,
-            "local_follow": null,
-            "mode": "0600",
-            "owner": null,
-            "remote_src": null,
-            "selevel": null,
-            "serole": null,
-            "setype": null,
-            "seuser": null,
-            "src": "/home/macharyaainsigh/.ansible/tmp/ansible-tmp-1622902130.2084892-31264-108243992647204/source",
-            "unsafe_writes": false,
-            "validate": null
-        }
-    },
-    "md5sum": "2f3f10bb476348ed67cae2016abf23cb",
-    "mode": "0600",
-    "owner": "macharyaainsigh",
-    "size": 1674,
-    "src": "/home/macharyaainsigh/.ansible/tmp/ansible-tmp-1622902130.2084892-31264-108243992647204/source",
-    "state": "file",
-    "uid": 1001
+task path: /home/macharyaainsigh/repo/Easypay-capstone/myec2vpc.yml:67
+skipping: [localhost] => {
+    "changed": false,
+    "skip_reason": "Conditional result was False"
 }
 
 TASK [Creating Master node in ec2 instance] ************************************
-task path: /home/macharyaainsigh/Easypay-capstone/myec2vpc.yml:72
-<127.0.0.1> ESTABLISH LOCAL CONNECTION FOR USER: macharyaainsigh
-<127.0.0.1> EXEC /bin/sh -c 'echo ~macharyaainsigh && sleep 0'
-<127.0.0.1> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo /home/macharyaainsigh/.ansible/tmp `"&& mkdir "` echo /home/macharyaainsigh/.ansible/tmp/ansible-tmp-1622902131.1259956-31896-253373285288571 `" && echo ansible-tmp-1622902131.1259956-31896-253373285288571="` echo /home/macharyaainsigh/.ansible/tmp/ansible-tmp-1622902131.1259956-31896-253373285288571 `" ) && sleep 0'
+task path: /home/macharyaainsigh/repo/Easypay-capstone/myec2vpc.yml:70
 redirecting (type: modules) ansible.builtin.ec2 to amazon.aws.ec2
 Using module file /home/macharyaainsigh/.ansible/collections/ansible_collections/amazon/aws/plugins/modules/ec2.py
-<127.0.0.1> PUT /home/macharyaainsigh/.ansible/tmp/ansible-local-13239s7l_zghw/tmps6ndf47k TO /home/macharyaainsigh/.ansible/tmp/ansible-tmp-1622902131.1259956-31896-253373285288571/AnsiballZ_ec2.py
-<127.0.0.1> EXEC /bin/sh -c 'chmod u+x /home/macharyaainsigh/.ansible/tmp/ansible-tmp-1622902131.1259956-31896-253373285288571/ /home/macharyaainsigh/.ansible/tmp/ansible-tmp-1622902131.1259956-31896-253373285288571/AnsiballZ_ec2.py && sleep 0'
-<127.0.0.1> EXEC /bin/sh -c '/usr/bin/python /home/macharyaainsigh/.ansible/tmp/ansible-tmp-1622902131.1259956-31896-253373285288571/AnsiballZ_ec2.py && sleep 0'
-<127.0.0.1> EXEC /bin/sh -c 'rm -f -r /home/macharyaainsigh/.ansible/tmp/ansible-tmp-1622902131.1259956-31896-253373285288571/ > /dev/null 2>&1 && sleep 0'
+Pipelining is enabled.
+<127.0.0.1> ESTABLISH LOCAL CONNECTION FOR USER: macharyaainsigh
+<127.0.0.1> EXEC /bin/sh -c '/usr/bin/python && sleep 0'
 changed: [localhost] => {
     "changed": true,
     "instance_ids": [
-        "i-060e8a2bd9e791a85"
+        "i-02c80e92d9fce55cb"
     ],
     "instances": [
         {
@@ -520,26 +422,26 @@ changed: [localhost] => {
                 "/dev/sda1": {
                     "delete_on_termination": true,
                     "status": "attached",
-                    "volume_id": "vol-0c3e69b007eb40146"
+                    "volume_id": "vol-00ea2f3ec098370f3"
                 }
             },
-            "dns_name": "ec2-3-94-129-121.compute-1.amazonaws.com",
+            "dns_name": "ec2-44-192-52-247.compute-1.amazonaws.com",
             "ebs_optimized": false,
             "groups": {
-                "sg-001c358369eac93d3": "ma_sec_group"
+                "sg-0308c5100afa5d236": "ma_sec_group"
             },
             "hypervisor": "xen",
-            "id": "i-060e8a2bd9e791a85",
+            "id": "i-02c80e92d9fce55cb",
             "image_id": "ami-09e67e426f25ce0d7",
             "instance_type": "t3.micro",
             "kernel": null,
             "key_name": "easypay-staging-key",
-            "launch_time": "2021-06-05T14:08:52.000Z",
+            "launch_time": "2021-06-06T03:40:02.000Z",
             "placement": "us-east-1f",
-            "private_dns_name": "ip-172-10-1-95.ec2.internal",
-            "private_ip": "172.10.1.95",
-            "public_dns_name": "ec2-3-94-129-121.compute-1.amazonaws.com",
-            "public_ip": "3.94.129.121",
+            "private_dns_name": "ip-172-10-1-25.ec2.internal",
+            "private_ip": "172.10.1.25",
+            "public_dns_name": "ec2-44-192-52-247.compute-1.amazonaws.com",
+            "public_ip": "44.192.52.247",
             "ramdisk": null,
             "region": "us-east-1",
             "root_device_name": "/dev/sda1",
@@ -568,7 +470,7 @@ changed: [localhost] => {
             "exact_count": null,
             "group": null,
             "group_id": [
-                "sg-001c358369eac93d3"
+                "sg-0308c5100afa5d236"
             ],
             "id": null,
             "image": "ami-09e67e426f25ce0d7",
@@ -600,7 +502,7 @@ changed: [localhost] => {
             "user_data": null,
             "validate_certs": true,
             "volumes": null,
-            "vpc_subnet_id": "subnet-00d087ed6da2dce23",
+            "vpc_subnet_id": "subnet-0c9ee11f07f195c38",
             "wait": true,
             "wait_timeout": 300,
             "zone": null
@@ -610,63 +512,20 @@ changed: [localhost] => {
 }
 
 TASK [Creating nodes in ec2 instance] ******************************************
-task path: /home/macharyaainsigh/Easypay-capstone/myec2vpc.yml:86
-<127.0.0.1> ESTABLISH LOCAL CONNECTION FOR USER: macharyaainsigh
-<127.0.0.1> EXEC /bin/sh -c 'echo ~macharyaainsigh && sleep 0'
-<127.0.0.1> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo /home/macharyaainsigh/.ansible/tmp `"&& mkdir "` echo /home/macharyaainsigh/.ansible/tmp/ansible-tmp-1622902143.6959999-9407-89581775080429 `" && echo ansible-tmp-1622902143.6959999-9407-89581775080429="` echo /home/macharyaainsigh/.ansible/tmp/ansible-tmp-1622902143.6959999-9407-89581775080429 `" ) && sleep 0'
+task path: /home/macharyaainsigh/repo/Easypay-capstone/myec2vpc.yml:84
 redirecting (type: modules) ansible.builtin.ec2 to amazon.aws.ec2
 Using module file /home/macharyaainsigh/.ansible/collections/ansible_collections/amazon/aws/plugins/modules/ec2.py
-<127.0.0.1> PUT /home/macharyaainsigh/.ansible/tmp/ansible-local-13239s7l_zghw/tmpi57_bvj0 TO /home/macharyaainsigh/.ansible/tmp/ansible-tmp-1622902143.6959999-9407-89581775080429/AnsiballZ_ec2.py
-<127.0.0.1> EXEC /bin/sh -c 'chmod u+x /home/macharyaainsigh/.ansible/tmp/ansible-tmp-1622902143.6959999-9407-89581775080429/ /home/macharyaainsigh/.ansible/tmp/ansible-tmp-1622902143.6959999-9407-89581775080429/AnsiballZ_ec2.py && sleep 0'
-<127.0.0.1> EXEC /bin/sh -c '/usr/bin/python /home/macharyaainsigh/.ansible/tmp/ansible-tmp-1622902143.6959999-9407-89581775080429/AnsiballZ_ec2.py && sleep 0'
-<127.0.0.1> EXEC /bin/sh -c 'rm -f -r /home/macharyaainsigh/.ansible/tmp/ansible-tmp-1622902143.6959999-9407-89581775080429/ > /dev/null 2>&1 && sleep 0'
+Pipelining is enabled.
+<127.0.0.1> ESTABLISH LOCAL CONNECTION FOR USER: macharyaainsigh
+<127.0.0.1> EXEC /bin/sh -c '/usr/bin/python && sleep 0'
 changed: [localhost] => {
     "changed": true,
     "instance_ids": [
-        "i-08cf68f15ed594fe7",
-        "i-0c52f14a2d20dfa2b",
-        "i-0fb099754658d82ba"
+        "i-0120deb537c9b25d2",
+        "i-0943444f985a6a496",
+        "i-0d90c768a68d0d01f"
     ],
     "instances": [
-        {
-            "ami_launch_index": "0",
-            "architecture": "x86_64",
-            "block_device_mapping": {
-                "/dev/sda1": {
-                    "delete_on_termination": true,
-                    "status": "attached",
-                    "volume_id": "vol-06325416ca7bbffd8"
-                }
-            },
-            "dns_name": "ec2-3-83-35-25.compute-1.amazonaws.com",
-            "ebs_optimized": false,
-            "groups": {
-                "sg-001c358369eac93d3": "ma_sec_group"
-            },
-            "hypervisor": "xen",
-            "id": "i-08cf68f15ed594fe7",
-            "image_id": "ami-09e67e426f25ce0d7",
-            "instance_type": "t3.micro",
-            "kernel": null,
-            "key_name": "easypay-staging-key",
-            "launch_time": "2021-06-05T14:09:05.000Z",
-            "placement": "us-east-1f",
-            "private_dns_name": "ip-172-10-1-67.ec2.internal",
-            "private_ip": "172.10.1.67",
-            "public_dns_name": "ec2-3-83-35-25.compute-1.amazonaws.com",
-            "public_ip": "3.83.35.25",
-            "ramdisk": null,
-            "region": "us-east-1",
-            "root_device_name": "/dev/sda1",
-            "root_device_type": "ebs",
-            "state": "running",
-            "state_code": 16,
-            "tags": {
-                "Name": "Nodes"
-            },
-            "tenancy": "default",
-            "virtualization_type": "hvm"
-        },
         {
             "ami_launch_index": "1",
             "architecture": "x86_64",
@@ -674,26 +533,26 @@ changed: [localhost] => {
                 "/dev/sda1": {
                     "delete_on_termination": true,
                     "status": "attached",
-                    "volume_id": "vol-02df5e70b66928a78"
+                    "volume_id": "vol-0f8163dc67b881f19"
                 }
             },
-            "dns_name": "ec2-18-232-179-107.compute-1.amazonaws.com",
+            "dns_name": "ec2-3-235-63-96.compute-1.amazonaws.com",
             "ebs_optimized": false,
             "groups": {
-                "sg-001c358369eac93d3": "ma_sec_group"
+                "sg-0308c5100afa5d236": "ma_sec_group"
             },
             "hypervisor": "xen",
-            "id": "i-0c52f14a2d20dfa2b",
+            "id": "i-0120deb537c9b25d2",
             "image_id": "ami-09e67e426f25ce0d7",
             "instance_type": "t3.micro",
             "kernel": null,
             "key_name": "easypay-staging-key",
-            "launch_time": "2021-06-05T14:09:05.000Z",
+            "launch_time": "2021-06-06T03:40:14.000Z",
             "placement": "us-east-1f",
-            "private_dns_name": "ip-172-10-1-50.ec2.internal",
-            "private_ip": "172.10.1.50",
-            "public_dns_name": "ec2-18-232-179-107.compute-1.amazonaws.com",
-            "public_ip": "18.232.179.107",
+            "private_dns_name": "ip-172-10-1-183.ec2.internal",
+            "private_ip": "172.10.1.183",
+            "public_dns_name": "ec2-3-235-63-96.compute-1.amazonaws.com",
+            "public_ip": "3.235.63.96",
             "ramdisk": null,
             "region": "us-east-1",
             "root_device_name": "/dev/sda1",
@@ -713,26 +572,65 @@ changed: [localhost] => {
                 "/dev/sda1": {
                     "delete_on_termination": true,
                     "status": "attached",
-                    "volume_id": "vol-09ceef4eba505bf67"
+                    "volume_id": "vol-06f007350da4c45a2"
                 }
             },
-            "dns_name": "ec2-3-236-251-70.compute-1.amazonaws.com",
+            "dns_name": "ec2-3-236-244-236.compute-1.amazonaws.com",
             "ebs_optimized": false,
             "groups": {
-                "sg-001c358369eac93d3": "ma_sec_group"
+                "sg-0308c5100afa5d236": "ma_sec_group"
             },
             "hypervisor": "xen",
-            "id": "i-0fb099754658d82ba",
+            "id": "i-0943444f985a6a496",
             "image_id": "ami-09e67e426f25ce0d7",
             "instance_type": "t3.micro",
             "kernel": null,
             "key_name": "easypay-staging-key",
-            "launch_time": "2021-06-05T14:09:05.000Z",
+            "launch_time": "2021-06-06T03:40:14.000Z",
             "placement": "us-east-1f",
-            "private_dns_name": "ip-172-10-1-111.ec2.internal",
-            "private_ip": "172.10.1.111",
-            "public_dns_name": "ec2-3-236-251-70.compute-1.amazonaws.com",
-            "public_ip": "3.236.251.70",
+            "private_dns_name": "ip-172-10-1-141.ec2.internal",
+            "private_ip": "172.10.1.141",
+            "public_dns_name": "ec2-3-236-244-236.compute-1.amazonaws.com",
+            "public_ip": "3.236.244.236",
+            "ramdisk": null,
+            "region": "us-east-1",
+            "root_device_name": "/dev/sda1",
+            "root_device_type": "ebs",
+            "state": "running",
+            "state_code": 16,
+            "tags": {
+                "Name": "Nodes"
+            },
+            "tenancy": "default",
+            "virtualization_type": "hvm"
+        },
+        {
+            "ami_launch_index": "0",
+            "architecture": "x86_64",
+            "block_device_mapping": {
+                "/dev/sda1": {
+                    "delete_on_termination": true,
+                    "status": "attached",
+                    "volume_id": "vol-00f1157f2627c1003"
+                }
+            },
+            "dns_name": "ec2-3-234-242-243.compute-1.amazonaws.com",
+            "ebs_optimized": false,
+            "groups": {
+                "sg-0308c5100afa5d236": "ma_sec_group"
+            },
+            "hypervisor": "xen",
+            "id": "i-0d90c768a68d0d01f",
+            "image_id": "ami-09e67e426f25ce0d7",
+            "instance_type": "t3.micro",
+            "kernel": null,
+            "key_name": "easypay-staging-key",
+            "launch_time": "2021-06-06T03:40:14.000Z",
+            "placement": "us-east-1f",
+            "private_dns_name": "ip-172-10-1-151.ec2.internal",
+            "private_ip": "172.10.1.151",
+            "public_dns_name": "ec2-3-234-242-243.compute-1.amazonaws.com",
+            "public_ip": "3.234.242.243",
             "ramdisk": null,
             "region": "us-east-1",
             "root_device_name": "/dev/sda1",
@@ -761,7 +659,7 @@ changed: [localhost] => {
             "exact_count": null,
             "group": null,
             "group_id": [
-                "sg-001c358369eac93d3"
+                "sg-0308c5100afa5d236"
             ],
             "id": null,
             "image": "ami-09e67e426f25ce0d7",
@@ -793,7 +691,7 @@ changed: [localhost] => {
             "user_data": null,
             "validate_certs": true,
             "volumes": null,
-            "vpc_subnet_id": "subnet-00d087ed6da2dce23",
+            "vpc_subnet_id": "subnet-0c9ee11f07f195c38",
             "wait": true,
             "wait_timeout": 300,
             "zone": null
@@ -802,1053 +700,164 @@ changed: [localhost] => {
     "tagged_instances": []
 }
 
-TASK [Add the newly created EC2 Nodes instance(s) to host group] ***************
-task path: /home/macharyaainsigh/Easypay-capstone/myec2vpc.yml:101
+TASK [associate new elastic IPs with each of the instances] ********************
+task path: /home/macharyaainsigh/repo/Easypay-capstone/myec2vpc.yml:99
+redirecting (type: modules) ansible.builtin.ec2_eip to community.aws.ec2_eip
+Using module file /home/macharyaainsigh/.ansible/collections/ansible_collections/community/aws/plugins/modules/ec2_eip.py
+Pipelining is enabled.
 <127.0.0.1> ESTABLISH LOCAL CONNECTION FOR USER: macharyaainsigh
-<127.0.0.1> EXEC /bin/sh -c 'echo ~macharyaainsigh && sleep 0'
-<127.0.0.1> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo /home/macharyaainsigh/.ansible/tmp `"&& mkdir "` echo /home/macharyaainsigh/.ansible/tmp/ansible-tmp-1622902156.707646-19274-115109598971026 `" && echo ansible-tmp-1622902156.707646-19274-115109598971026="` echo /home/macharyaainsigh/.ansible/tmp/ansible-tmp-1622902156.707646-19274-115109598971026 `" ) && sleep 0'
-Using module file /home/macharyaainsigh/.local/lib/python3.9/site-packages/ansible/modules/lineinfile.py
-<127.0.0.1> PUT /home/macharyaainsigh/.ansible/tmp/ansible-local-13239s7l_zghw/tmpj1almwog TO /home/macharyaainsigh/.ansible/tmp/ansible-tmp-1622902156.707646-19274-115109598971026/AnsiballZ_lineinfile.py
-<127.0.0.1> EXEC /bin/sh -c 'chmod u+x /home/macharyaainsigh/.ansible/tmp/ansible-tmp-1622902156.707646-19274-115109598971026/ /home/macharyaainsigh/.ansible/tmp/ansible-tmp-1622902156.707646-19274-115109598971026/AnsiballZ_lineinfile.py && sleep 0'
-<127.0.0.1> EXEC /bin/sh -c '/usr/bin/python /home/macharyaainsigh/.ansible/tmp/ansible-tmp-1622902156.707646-19274-115109598971026/AnsiballZ_lineinfile.py && sleep 0'
-<127.0.0.1> EXEC /bin/sh -c 'rm -f -r /home/macharyaainsigh/.ansible/tmp/ansible-tmp-1622902156.707646-19274-115109598971026/ > /dev/null 2>&1 && sleep 0'
-<127.0.0.1> EXEC /bin/sh -c 'echo ~macharyaainsigh && sleep 0'
-changed: [localhost] => (item={'id': 'i-08cf68f15ed594fe7', 'ami_launch_index': '0', 'private_ip': '172.10.1.67', 'private_dns_name': 'ip-172-10-1-67.ec2.internal', 'public_ip': '3.83.35.25', 'dns_name': 'ec2-3-83-35-25.compute-1.amazonaws.com', 'public_dns_name': 'ec2-3-83-35-25.compute-1.amazonaws.com', 'state_code': 16, 'architecture': 'x86_64', 'image_id': 'ami-09e67e426f25ce0d7', 'key_name': 'easypay-staging-key', 'placement': 'us-east-1f', 'region': 'us-east-1', 'kernel': None, 'ramdisk': None, 'launch_time': '2021-06-05T14:09:05.000Z', 'instance_type': 't3.micro', 'root_device_type': 'ebs', 'root_device_name': '/dev/sda1', 'state': 'running', 'hypervisor': 'xen', 'tags': {'Name': 'Nodes'}, 'groups': {'sg-001c358369eac93d3': 'ma_sec_group'}, 'virtualization_type': 'hvm', 'ebs_optimized': False, 'block_device_mapping': {'/dev/sda1': {'status': 'attached', 'volume_id': 'vol-06325416ca7bbffd8', 'delete_on_termination': True}}, 'tenancy': 'default'}) => {
+<127.0.0.1> EXEC /bin/sh -c '/usr/bin/python && sleep 0'
+changed: [localhost] => (item=i-02c80e92d9fce55cb) => {
+    "allocation_id": "eipalloc-062c9ae844dd70715",
     "ansible_loop_var": "item",
-    "backup": "",
     "changed": true,
-    "diff": [
-        {
-            "after": "",
-            "after_header": "../hosts (content)",
-            "before": "",
-            "before_header": "../hosts (content)"
-        },
-        {
-            "after_header": "../hosts (file attributes)",
-            "before_header": "../hosts (file attributes)"
-        }
-    ],
     "invocation": {
         "module_args": {
-            "attributes": null,
-            "backrefs": false,
-            "backup": false,
-            "create": false,
-            "firstmatch": false,
-            "group": null,
-            "insertafter": "EOF",
-            "insertbefore": null,
-            "line": "3.83.35.25  ansible_ssh_user=ubuntu ansible_ssh_private_key_file=../aws-private.pem",
-            "mode": null,
-            "owner": null,
-            "path": "../hosts",
-            "regexp": null,
-            "search_string": null,
-            "selevel": null,
-            "serole": null,
-            "setype": null,
-            "seuser": null,
+            "allow_reassociation": false,
+            "aws_access_key": null,
+            "aws_ca_bundle": null,
+            "aws_config": null,
+            "aws_secret_key": null,
+            "debug_botocore_endpoint_logs": false,
+            "device_id": "i-02c80e92d9fce55cb",
+            "ec2_url": null,
+            "in_vpc": true,
+            "private_ip_address": null,
+            "profile": null,
+            "public_ip": null,
+            "public_ipv4_pool": null,
+            "region": "us-east-1",
+            "release_on_disassociation": false,
+            "reuse_existing_ip_allowed": true,
+            "security_token": null,
             "state": "present",
-            "unsafe_writes": false,
-            "validate": null
+            "tag_name": null,
+            "tag_value": null,
+            "validate_certs": true,
+            "wait_timeout": null
         }
     },
-    "item": {
-        "ami_launch_index": "0",
-        "architecture": "x86_64",
-        "block_device_mapping": {
-            "/dev/sda1": {
-                "delete_on_termination": true,
-                "status": "attached",
-                "volume_id": "vol-06325416ca7bbffd8"
-            }
-        },
-        "dns_name": "ec2-3-83-35-25.compute-1.amazonaws.com",
-        "ebs_optimized": false,
-        "groups": {
-            "sg-001c358369eac93d3": "ma_sec_group"
-        },
-        "hypervisor": "xen",
-        "id": "i-08cf68f15ed594fe7",
-        "image_id": "ami-09e67e426f25ce0d7",
-        "instance_type": "t3.micro",
-        "kernel": null,
-        "key_name": "easypay-staging-key",
-        "launch_time": "2021-06-05T14:09:05.000Z",
-        "placement": "us-east-1f",
-        "private_dns_name": "ip-172-10-1-67.ec2.internal",
-        "private_ip": "172.10.1.67",
-        "public_dns_name": "ec2-3-83-35-25.compute-1.amazonaws.com",
-        "public_ip": "3.83.35.25",
-        "ramdisk": null,
-        "region": "us-east-1",
-        "root_device_name": "/dev/sda1",
-        "root_device_type": "ebs",
-        "state": "running",
-        "state_code": 16,
-        "tags": {
-            "Name": "Nodes"
-        },
-        "tenancy": "default",
-        "virtualization_type": "hvm"
-    },
-    "msg": "line added"
-}
-<127.0.0.1> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo /home/macharyaainsigh/.ansible/tmp `"&& mkdir "` echo /home/macharyaainsigh/.ansible/tmp/ansible-tmp-1622902157.1206293-19274-6922995174870 `" && echo ansible-tmp-1622902157.1206293-19274-6922995174870="` echo /home/macharyaainsigh/.ansible/tmp/ansible-tmp-1622902157.1206293-19274-6922995174870 `" ) && sleep 0'
-Using module file /home/macharyaainsigh/.local/lib/python3.9/site-packages/ansible/modules/lineinfile.py
-<127.0.0.1> PUT /home/macharyaainsigh/.ansible/tmp/ansible-local-13239s7l_zghw/tmptmbem2c6 TO /home/macharyaainsigh/.ansible/tmp/ansible-tmp-1622902157.1206293-19274-6922995174870/AnsiballZ_lineinfile.py
-<127.0.0.1> EXEC /bin/sh -c 'chmod u+x /home/macharyaainsigh/.ansible/tmp/ansible-tmp-1622902157.1206293-19274-6922995174870/ /home/macharyaainsigh/.ansible/tmp/ansible-tmp-1622902157.1206293-19274-6922995174870/AnsiballZ_lineinfile.py && sleep 0'
-<127.0.0.1> EXEC /bin/sh -c '/usr/bin/python /home/macharyaainsigh/.ansible/tmp/ansible-tmp-1622902157.1206293-19274-6922995174870/AnsiballZ_lineinfile.py && sleep 0'
-<127.0.0.1> EXEC /bin/sh -c 'rm -f -r /home/macharyaainsigh/.ansible/tmp/ansible-tmp-1622902157.1206293-19274-6922995174870/ > /dev/null 2>&1 && sleep 0'
-changed: [localhost] => (item={'id': 'i-0c52f14a2d20dfa2b', 'ami_launch_index': '1', 'private_ip': '172.10.1.50', 'private_dns_name': 'ip-172-10-1-50.ec2.internal', 'public_ip': '18.232.179.107', 'dns_name': 'ec2-18-232-179-107.compute-1.amazonaws.com', 'public_dns_name': 'ec2-18-232-179-107.compute-1.amazonaws.com', 'state_code': 16, 'architecture': 'x86_64', 'image_id': 'ami-09e67e426f25ce0d7', 'key_name': 'easypay-staging-key', 'placement': 'us-east-1f', 'region': 'us-east-1', 'kernel': None, 'ramdisk': None, 'launch_time': '2021-06-05T14:09:05.000Z', 'instance_type': 't3.micro', 'root_device_type': 'ebs', 'root_device_name': '/dev/sda1', 'state': 'running', 'hypervisor': 'xen', 'tags': {'Name': 'Nodes'}, 'groups': {'sg-001c358369eac93d3': 'ma_sec_group'}, 'virtualization_type': 'hvm', 'ebs_optimized': False, 'block_device_mapping': {'/dev/sda1': {'status': 'attached', 'volume_id': 'vol-02df5e70b66928a78', 'delete_on_termination': True}}, 'tenancy': 'default'}) => {
-    "ansible_loop_var": "item",
-    "backup": "",
-    "changed": true,
-    "diff": [
-        {
-            "after": "",
-            "after_header": "../hosts (content)",
-            "before": "",
-            "before_header": "../hosts (content)"
-        },
-        {
-            "after_header": "../hosts (file attributes)",
-            "before_header": "../hosts (file attributes)"
-        }
-    ],
-    "invocation": {
-        "module_args": {
-            "attributes": null,
-            "backrefs": false,
-            "backup": false,
-            "create": false,
-            "firstmatch": false,
-            "group": null,
-            "insertafter": "EOF",
-            "insertbefore": null,
-            "line": "18.232.179.107  ansible_ssh_user=ubuntu ansible_ssh_private_key_file=../aws-private.pem",
-            "mode": null,
-            "owner": null,
-            "path": "../hosts",
-            "regexp": null,
-            "search_string": null,
-            "selevel": null,
-            "serole": null,
-            "setype": null,
-            "seuser": null,
-            "state": "present",
-            "unsafe_writes": false,
-            "validate": null
-        }
-    },
-    "item": {
-        "ami_launch_index": "1",
-        "architecture": "x86_64",
-        "block_device_mapping": {
-            "/dev/sda1": {
-                "delete_on_termination": true,
-                "status": "attached",
-                "volume_id": "vol-02df5e70b66928a78"
-            }
-        },
-        "dns_name": "ec2-18-232-179-107.compute-1.amazonaws.com",
-        "ebs_optimized": false,
-        "groups": {
-            "sg-001c358369eac93d3": "ma_sec_group"
-        },
-        "hypervisor": "xen",
-        "id": "i-0c52f14a2d20dfa2b",
-        "image_id": "ami-09e67e426f25ce0d7",
-        "instance_type": "t3.micro",
-        "kernel": null,
-        "key_name": "easypay-staging-key",
-        "launch_time": "2021-06-05T14:09:05.000Z",
-        "placement": "us-east-1f",
-        "private_dns_name": "ip-172-10-1-50.ec2.internal",
-        "private_ip": "172.10.1.50",
-        "public_dns_name": "ec2-18-232-179-107.compute-1.amazonaws.com",
-        "public_ip": "18.232.179.107",
-        "ramdisk": null,
-        "region": "us-east-1",
-        "root_device_name": "/dev/sda1",
-        "root_device_type": "ebs",
-        "state": "running",
-        "state_code": 16,
-        "tags": {
-            "Name": "Nodes"
-        },
-        "tenancy": "default",
-        "virtualization_type": "hvm"
-    },
-    "msg": "line added"
-}
-<127.0.0.1> EXEC /bin/sh -c 'echo ~macharyaainsigh && sleep 0'
-<127.0.0.1> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo /home/macharyaainsigh/.ansible/tmp `"&& mkdir "` echo /home/macharyaainsigh/.ansible/tmp/ansible-tmp-1622902157.3917418-19274-208875563210394 `" && echo ansible-tmp-1622902157.3917418-19274-208875563210394="` echo /home/macharyaainsigh/.ansible/tmp/ansible-tmp-1622902157.3917418-19274-208875563210394 `" ) && sleep 0'
-Using module file /home/macharyaainsigh/.local/lib/python3.9/site-packages/ansible/modules/lineinfile.py
-<127.0.0.1> PUT /home/macharyaainsigh/.ansible/tmp/ansible-local-13239s7l_zghw/tmpo543lpp6 TO /home/macharyaainsigh/.ansible/tmp/ansible-tmp-1622902157.3917418-19274-208875563210394/AnsiballZ_lineinfile.py
-<127.0.0.1> EXEC /bin/sh -c 'chmod u+x /home/macharyaainsigh/.ansible/tmp/ansible-tmp-1622902157.3917418-19274-208875563210394/ /home/macharyaainsigh/.ansible/tmp/ansible-tmp-1622902157.3917418-19274-208875563210394/AnsiballZ_lineinfile.py && sleep 0'
-<127.0.0.1> EXEC /bin/sh -c '/usr/bin/python /home/macharyaainsigh/.ansible/tmp/ansible-tmp-1622902157.3917418-19274-208875563210394/AnsiballZ_lineinfile.py && sleep 0'
-<127.0.0.1> EXEC /bin/sh -c 'rm -f -r /home/macharyaainsigh/.ansible/tmp/ansible-tmp-1622902157.3917418-19274-208875563210394/ > /dev/null 2>&1 && sleep 0'
-changed: [localhost] => (item={'id': 'i-0fb099754658d82ba', 'ami_launch_index': '2', 'private_ip': '172.10.1.111', 'private_dns_name': 'ip-172-10-1-111.ec2.internal', 'public_ip': '3.236.251.70', 'dns_name': 'ec2-3-236-251-70.compute-1.amazonaws.com', 'public_dns_name': 'ec2-3-236-251-70.compute-1.amazonaws.com', 'state_code': 16, 'architecture': 'x86_64', 'image_id': 'ami-09e67e426f25ce0d7', 'key_name': 'easypay-staging-key', 'placement': 'us-east-1f', 'region': 'us-east-1', 'kernel': None, 'ramdisk': None, 'launch_time': '2021-06-05T14:09:05.000Z', 'instance_type': 't3.micro', 'root_device_type': 'ebs', 'root_device_name': '/dev/sda1', 'state': 'running', 'hypervisor': 'xen', 'tags': {'Name': 'Nodes'}, 'groups': {'sg-001c358369eac93d3': 'ma_sec_group'}, 'virtualization_type': 'hvm', 'ebs_optimized': False, 'block_device_mapping': {'/dev/sda1': {'status': 'attached', 'volume_id': 'vol-09ceef4eba505bf67', 'delete_on_termination': True}}, 'tenancy': 'default'}) => {
-    "ansible_loop_var": "item",
-    "backup": "",
-    "changed": true,
-    "diff": [
-        {
-            "after": "",
-            "after_header": "../hosts (content)",
-            "before": "",
-            "before_header": "../hosts (content)"
-        },
-        {
-            "after_header": "../hosts (file attributes)",
-            "before_header": "../hosts (file attributes)"
-        }
-    ],
-    "invocation": {
-        "module_args": {
-            "attributes": null,
-            "backrefs": false,
-            "backup": false,
-            "create": false,
-            "firstmatch": false,
-            "group": null,
-            "insertafter": "EOF",
-            "insertbefore": null,
-            "line": "3.236.251.70  ansible_ssh_user=ubuntu ansible_ssh_private_key_file=../aws-private.pem",
-            "mode": null,
-            "owner": null,
-            "path": "../hosts",
-            "regexp": null,
-            "search_string": null,
-            "selevel": null,
-            "serole": null,
-            "setype": null,
-            "seuser": null,
-            "state": "present",
-            "unsafe_writes": false,
-            "validate": null
-        }
-    },
-    "item": {
-        "ami_launch_index": "2",
-        "architecture": "x86_64",
-        "block_device_mapping": {
-            "/dev/sda1": {
-                "delete_on_termination": true,
-                "status": "attached",
-                "volume_id": "vol-09ceef4eba505bf67"
-            }
-        },
-        "dns_name": "ec2-3-236-251-70.compute-1.amazonaws.com",
-        "ebs_optimized": false,
-        "groups": {
-            "sg-001c358369eac93d3": "ma_sec_group"
-        },
-        "hypervisor": "xen",
-        "id": "i-0fb099754658d82ba",
-        "image_id": "ami-09e67e426f25ce0d7",
-        "instance_type": "t3.micro",
-        "kernel": null,
-        "key_name": "easypay-staging-key",
-        "launch_time": "2021-06-05T14:09:05.000Z",
-        "placement": "us-east-1f",
-        "private_dns_name": "ip-172-10-1-111.ec2.internal",
-        "private_ip": "172.10.1.111",
-        "public_dns_name": "ec2-3-236-251-70.compute-1.amazonaws.com",
-        "public_ip": "3.236.251.70",
-        "ramdisk": null,
-        "region": "us-east-1",
-        "root_device_name": "/dev/sda1",
-        "root_device_type": "ebs",
-        "state": "running",
-        "state_code": 16,
-        "tags": {
-            "Name": "Nodes"
-        },
-        "tenancy": "default",
-        "virtualization_type": "hvm"
-    },
-    "msg": "line added"
+    "item": "i-02c80e92d9fce55cb",
+    "public_ip": "54.237.169.34"
 }
 
-TASK [Add the newly created EC2 Master instance(s) to nodes group] *************
-task path: /home/macharyaainsigh/Easypay-capstone/myec2vpc.yml:108
+TASK [associate new elastic IPs with each of the instances] ********************
+task path: /home/macharyaainsigh/repo/Easypay-capstone/myec2vpc.yml:108
+redirecting (type: modules) ansible.builtin.ec2_eip to community.aws.ec2_eip
+Using module file /home/macharyaainsigh/.ansible/collections/ansible_collections/community/aws/plugins/modules/ec2_eip.py
+Pipelining is enabled.
 <127.0.0.1> ESTABLISH LOCAL CONNECTION FOR USER: macharyaainsigh
-<127.0.0.1> EXEC /bin/sh -c 'echo ~macharyaainsigh && sleep 0'
-<127.0.0.1> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo /home/macharyaainsigh/.ansible/tmp `"&& mkdir "` echo /home/macharyaainsigh/.ansible/tmp/ansible-tmp-1622902157.7228343-20016-232037955446711 `" && echo ansible-tmp-1622902157.7228343-20016-232037955446711="` echo /home/macharyaainsigh/.ansible/tmp/ansible-tmp-1622902157.7228343-20016-232037955446711 `" ) && sleep 0'
-Using module file /home/macharyaainsigh/.local/lib/python3.9/site-packages/ansible/modules/lineinfile.py
-<127.0.0.1> PUT /home/macharyaainsigh/.ansible/tmp/ansible-local-13239s7l_zghw/tmpmqe0ps2v TO /home/macharyaainsigh/.ansible/tmp/ansible-tmp-1622902157.7228343-20016-232037955446711/AnsiballZ_lineinfile.py
-<127.0.0.1> EXEC /bin/sh -c 'chmod u+x /home/macharyaainsigh/.ansible/tmp/ansible-tmp-1622902157.7228343-20016-232037955446711/ /home/macharyaainsigh/.ansible/tmp/ansible-tmp-1622902157.7228343-20016-232037955446711/AnsiballZ_lineinfile.py && sleep 0'
-<127.0.0.1> EXEC /bin/sh -c '/usr/bin/python /home/macharyaainsigh/.ansible/tmp/ansible-tmp-1622902157.7228343-20016-232037955446711/AnsiballZ_lineinfile.py && sleep 0'
-<127.0.0.1> EXEC /bin/sh -c 'rm -f -r /home/macharyaainsigh/.ansible/tmp/ansible-tmp-1622902157.7228343-20016-232037955446711/ > /dev/null 2>&1 && sleep 0'
-changed: [localhost] => (item={'id': 'i-060e8a2bd9e791a85', 'ami_launch_index': '0', 'private_ip': '172.10.1.95', 'private_dns_name': 'ip-172-10-1-95.ec2.internal', 'public_ip': '3.94.129.121', 'dns_name': 'ec2-3-94-129-121.compute-1.amazonaws.com', 'public_dns_name': 'ec2-3-94-129-121.compute-1.amazonaws.com', 'state_code': 16, 'architecture': 'x86_64', 'image_id': 'ami-09e67e426f25ce0d7', 'key_name': 'easypay-staging-key', 'placement': 'us-east-1f', 'region': 'us-east-1', 'kernel': None, 'ramdisk': None, 'launch_time': '2021-06-05T14:08:52.000Z', 'instance_type': 't3.micro', 'root_device_type': 'ebs', 'root_device_name': '/dev/sda1', 'state': 'running', 'hypervisor': 'xen', 'tags': {'Name': 'Master'}, 'groups': {'sg-001c358369eac93d3': 'ma_sec_group'}, 'virtualization_type': 'hvm', 'ebs_optimized': False, 'block_device_mapping': {'/dev/sda1': {'status': 'attached', 'volume_id': 'vol-0c3e69b007eb40146', 'delete_on_termination': True}}, 'tenancy': 'default'}) => {
+<127.0.0.1> EXEC /bin/sh -c '/usr/bin/python && sleep 0'
+redirecting (type: modules) ansible.builtin.ec2_eip to community.aws.ec2_eip
+changed: [localhost] => (item=i-0120deb537c9b25d2) => {
+    "allocation_id": "eipalloc-0fa50d3d3cc560547",
     "ansible_loop_var": "item",
-    "backup": "",
     "changed": true,
-    "diff": [
-        {
-            "after": "",
-            "after_header": "../hosts (content)",
-            "before": "",
-            "before_header": "../hosts (content)"
-        },
-        {
-            "after_header": "../hosts (file attributes)",
-            "before_header": "../hosts (file attributes)"
-        }
-    ],
     "invocation": {
         "module_args": {
-            "attributes": null,
-            "backrefs": false,
-            "backup": false,
-            "create": false,
-            "firstmatch": false,
-            "group": null,
-            "insertafter": "EOF",
-            "insertbefore": null,
-            "line": "3.94.129.121  ansible_ssh_user=ubuntu ansible_ssh_private_key_file=../aws-private.pem",
-            "mode": null,
-            "owner": null,
-            "path": "../hosts",
-            "regexp": null,
-            "search_string": null,
-            "selevel": null,
-            "serole": null,
-            "setype": null,
-            "seuser": null,
+            "allow_reassociation": false,
+            "aws_access_key": null,
+            "aws_ca_bundle": null,
+            "aws_config": null,
+            "aws_secret_key": null,
+            "debug_botocore_endpoint_logs": false,
+            "device_id": "i-0120deb537c9b25d2",
+            "ec2_url": null,
+            "in_vpc": true,
+            "private_ip_address": null,
+            "profile": null,
+            "public_ip": null,
+            "public_ipv4_pool": null,
+            "region": "us-east-1",
+            "release_on_disassociation": false,
+            "reuse_existing_ip_allowed": true,
+            "security_token": null,
             "state": "present",
-            "unsafe_writes": false,
-            "validate": null
+            "tag_name": null,
+            "tag_value": null,
+            "validate_certs": true,
+            "wait_timeout": null
         }
     },
-    "item": {
-        "ami_launch_index": "0",
-        "architecture": "x86_64",
-        "block_device_mapping": {
-            "/dev/sda1": {
-                "delete_on_termination": true,
-                "status": "attached",
-                "volume_id": "vol-0c3e69b007eb40146"
-            }
-        },
-        "dns_name": "ec2-3-94-129-121.compute-1.amazonaws.com",
-        "ebs_optimized": false,
-        "groups": {
-            "sg-001c358369eac93d3": "ma_sec_group"
-        },
-        "hypervisor": "xen",
-        "id": "i-060e8a2bd9e791a85",
-        "image_id": "ami-09e67e426f25ce0d7",
-        "instance_type": "t3.micro",
-        "kernel": null,
-        "key_name": "easypay-staging-key",
-        "launch_time": "2021-06-05T14:08:52.000Z",
-        "placement": "us-east-1f",
-        "private_dns_name": "ip-172-10-1-95.ec2.internal",
-        "private_ip": "172.10.1.95",
-        "public_dns_name": "ec2-3-94-129-121.compute-1.amazonaws.com",
-        "public_ip": "3.94.129.121",
-        "ramdisk": null,
-        "region": "us-east-1",
-        "root_device_name": "/dev/sda1",
-        "root_device_type": "ebs",
-        "state": "running",
-        "state_code": 16,
-        "tags": {
-            "Name": "Master"
-        },
-        "tenancy": "default",
-        "virtualization_type": "hvm"
-    },
-    "msg": "line added"
+    "item": "i-0120deb537c9b25d2",
+    "public_ip": "54.197.97.231"
 }
-
-TASK [Add the newly created EC2 Master instance(s) to masters group] ***********
-task path: /home/macharyaainsigh/Easypay-capstone/myec2vpc.yml:115
-<127.0.0.1> ESTABLISH LOCAL CONNECTION FOR USER: macharyaainsigh
-<127.0.0.1> EXEC /bin/sh -c 'echo ~macharyaainsigh && sleep 0'
-<127.0.0.1> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo /home/macharyaainsigh/.ansible/tmp `"&& mkdir "` echo /home/macharyaainsigh/.ansible/tmp/ansible-tmp-1622902158.029148-20226-131818874947686 `" && echo ansible-tmp-1622902158.029148-20226-131818874947686="` echo /home/macharyaainsigh/.ansible/tmp/ansible-tmp-1622902158.029148-20226-131818874947686 `" ) && sleep 0'
-Using module file /home/macharyaainsigh/.local/lib/python3.9/site-packages/ansible/modules/lineinfile.py
-<127.0.0.1> PUT /home/macharyaainsigh/.ansible/tmp/ansible-local-13239s7l_zghw/tmpvb79lm85 TO /home/macharyaainsigh/.ansible/tmp/ansible-tmp-1622902158.029148-20226-131818874947686/AnsiballZ_lineinfile.py
-<127.0.0.1> EXEC /bin/sh -c 'chmod u+x /home/macharyaainsigh/.ansible/tmp/ansible-tmp-1622902158.029148-20226-131818874947686/ /home/macharyaainsigh/.ansible/tmp/ansible-tmp-1622902158.029148-20226-131818874947686/AnsiballZ_lineinfile.py && sleep 0'
-<127.0.0.1> EXEC /bin/sh -c '/usr/bin/python /home/macharyaainsigh/.ansible/tmp/ansible-tmp-1622902158.029148-20226-131818874947686/AnsiballZ_lineinfile.py && sleep 0'
-<127.0.0.1> EXEC /bin/sh -c 'rm -f -r /home/macharyaainsigh/.ansible/tmp/ansible-tmp-1622902158.029148-20226-131818874947686/ > /dev/null 2>&1 && sleep 0'
-changed: [localhost] => (item={'id': 'i-060e8a2bd9e791a85', 'ami_launch_index': '0', 'private_ip': '172.10.1.95', 'private_dns_name': 'ip-172-10-1-95.ec2.internal', 'public_ip': '3.94.129.121', 'dns_name': 'ec2-3-94-129-121.compute-1.amazonaws.com', 'public_dns_name': 'ec2-3-94-129-121.compute-1.amazonaws.com', 'state_code': 16, 'architecture': 'x86_64', 'image_id': 'ami-09e67e426f25ce0d7', 'key_name': 'easypay-staging-key', 'placement': 'us-east-1f', 'region': 'us-east-1', 'kernel': None, 'ramdisk': None, 'launch_time': '2021-06-05T14:08:52.000Z', 'instance_type': 't3.micro', 'root_device_type': 'ebs', 'root_device_name': '/dev/sda1', 'state': 'running', 'hypervisor': 'xen', 'tags': {'Name': 'Master'}, 'groups': {'sg-001c358369eac93d3': 'ma_sec_group'}, 'virtualization_type': 'hvm', 'ebs_optimized': False, 'block_device_mapping': {'/dev/sda1': {'status': 'attached', 'volume_id': 'vol-0c3e69b007eb40146', 'delete_on_termination': True}}, 'tenancy': 'default'}) => {
+Using module file /home/macharyaainsigh/.ansible/collections/ansible_collections/community/aws/plugins/modules/ec2_eip.py
+Pipelining is enabled.
+<127.0.0.1> EXEC /bin/sh -c '/usr/bin/python && sleep 0'
+redirecting (type: modules) ansible.builtin.ec2_eip to community.aws.ec2_eip
+changed: [localhost] => (item=i-0943444f985a6a496) => {
+    "allocation_id": "eipalloc-0d35986a83b1c0f49",
     "ansible_loop_var": "item",
-    "backup": "",
     "changed": true,
-    "diff": [
-        {
-            "after": "",
-            "after_header": "../hosts (content)",
-            "before": "",
-            "before_header": "../hosts (content)"
-        },
-        {
-            "after_header": "../hosts (file attributes)",
-            "before_header": "../hosts (file attributes)"
-        }
-    ],
     "invocation": {
         "module_args": {
-            "attributes": null,
-            "backrefs": false,
-            "backup": false,
-            "create": false,
-            "firstmatch": false,
-            "group": null,
-            "insertafter": "EOF",
-            "insertbefore": null,
-            "line": "[masters]\n3.94.129.121  ansible_ssh_user=ubuntu ansible_ssh_private_key_file=../aws-private.pem",
-            "mode": null,
-            "owner": null,
-            "path": "../hosts",
-            "regexp": null,
-            "search_string": null,
-            "selevel": null,
-            "serole": null,
-            "setype": null,
-            "seuser": null,
+            "allow_reassociation": false,
+            "aws_access_key": null,
+            "aws_ca_bundle": null,
+            "aws_config": null,
+            "aws_secret_key": null,
+            "debug_botocore_endpoint_logs": false,
+            "device_id": "i-0943444f985a6a496",
+            "ec2_url": null,
+            "in_vpc": true,
+            "private_ip_address": null,
+            "profile": null,
+            "public_ip": null,
+            "public_ipv4_pool": null,
+            "region": "us-east-1",
+            "release_on_disassociation": false,
+            "reuse_existing_ip_allowed": true,
+            "security_token": null,
             "state": "present",
-            "unsafe_writes": false,
-            "validate": null
+            "tag_name": null,
+            "tag_value": null,
+            "validate_certs": true,
+            "wait_timeout": null
         }
     },
-    "item": {
-        "ami_launch_index": "0",
-        "architecture": "x86_64",
-        "block_device_mapping": {
-            "/dev/sda1": {
-                "delete_on_termination": true,
-                "status": "attached",
-                "volume_id": "vol-0c3e69b007eb40146"
-            }
-        },
-        "dns_name": "ec2-3-94-129-121.compute-1.amazonaws.com",
-        "ebs_optimized": false,
-        "groups": {
-            "sg-001c358369eac93d3": "ma_sec_group"
-        },
-        "hypervisor": "xen",
-        "id": "i-060e8a2bd9e791a85",
-        "image_id": "ami-09e67e426f25ce0d7",
-        "instance_type": "t3.micro",
-        "kernel": null,
-        "key_name": "easypay-staging-key",
-        "launch_time": "2021-06-05T14:08:52.000Z",
-        "placement": "us-east-1f",
-        "private_dns_name": "ip-172-10-1-95.ec2.internal",
-        "private_ip": "172.10.1.95",
-        "public_dns_name": "ec2-3-94-129-121.compute-1.amazonaws.com",
-        "public_ip": "3.94.129.121",
-        "ramdisk": null,
-        "region": "us-east-1",
-        "root_device_name": "/dev/sda1",
-        "root_device_type": "ebs",
-        "state": "running",
-        "state_code": 16,
-        "tags": {
-            "Name": "Master"
-        },
-        "tenancy": "default",
-        "virtualization_type": "hvm"
-    },
-    "msg": "line added"
+    "item": "i-0943444f985a6a496",
+    "public_ip": "54.161.228.42"
 }
-
-TASK [wait_for] ****************************************************************
-task path: /home/macharyaainsigh/Easypay-capstone/myec2vpc.yml:122
-<127.0.0.1> ESTABLISH LOCAL CONNECTION FOR USER: macharyaainsigh
-<127.0.0.1> EXEC /bin/sh -c 'echo ~macharyaainsigh && sleep 0'
-<127.0.0.1> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo /home/macharyaainsigh/.ansible/tmp `"&& mkdir "` echo /home/macharyaainsigh/.ansible/tmp/ansible-tmp-1622902158.345631-20464-6184372588776 `" && echo ansible-tmp-1622902158.345631-20464-6184372588776="` echo /home/macharyaainsigh/.ansible/tmp/ansible-tmp-1622902158.345631-20464-6184372588776 `" ) && sleep 0'
-Using module file /home/macharyaainsigh/.local/lib/python3.9/site-packages/ansible/modules/wait_for.py
-<127.0.0.1> PUT /home/macharyaainsigh/.ansible/tmp/ansible-local-13239s7l_zghw/tmp9h8kvuvi TO /home/macharyaainsigh/.ansible/tmp/ansible-tmp-1622902158.345631-20464-6184372588776/AnsiballZ_wait_for.py
-<127.0.0.1> EXEC /bin/sh -c 'chmod u+x /home/macharyaainsigh/.ansible/tmp/ansible-tmp-1622902158.345631-20464-6184372588776/ /home/macharyaainsigh/.ansible/tmp/ansible-tmp-1622902158.345631-20464-6184372588776/AnsiballZ_wait_for.py && sleep 0'
-<127.0.0.1> EXEC /bin/sh -c '/usr/bin/python /home/macharyaainsigh/.ansible/tmp/ansible-tmp-1622902158.345631-20464-6184372588776/AnsiballZ_wait_for.py && sleep 0'
-<127.0.0.1> EXEC /bin/sh -c 'rm -f -r /home/macharyaainsigh/.ansible/tmp/ansible-tmp-1622902158.345631-20464-6184372588776/ > /dev/null 2>&1 && sleep 0'
-ok: [localhost] => {
-    "changed": false,
-    "elapsed": 0,
-    "gid": 1001,
-    "group": "macharyaainsigh",
+Using module file /home/macharyaainsigh/.ansible/collections/ansible_collections/community/aws/plugins/modules/ec2_eip.py
+Pipelining is enabled.
+<127.0.0.1> EXEC /bin/sh -c '/usr/bin/python && sleep 0'
+changed: [localhost] => (item=i-0d90c768a68d0d01f) => {
+    "allocation_id": "eipalloc-03203670d791e89bb",
+    "ansible_loop_var": "item",
+    "changed": true,
     "invocation": {
         "module_args": {
-            "active_connection_states": [
-                "ESTABLISHED",
-                "FIN_WAIT1",
-                "FIN_WAIT2",
-                "SYN_RECV",
-                "SYN_SENT",
-                "TIME_WAIT"
-            ],
-            "connect_timeout": 5,
-            "delay": 0,
-            "exclude_hosts": null,
-            "host": "127.0.0.1",
-            "msg": null,
-            "path": "../hosts",
-            "port": null,
-            "search_regex": "ansible_ssh_user=ubuntu ansible_ssh_private_key_file=../aws-private.pem",
-            "sleep": 1,
-            "state": "started",
-            "timeout": 300
+            "allow_reassociation": false,
+            "aws_access_key": null,
+            "aws_ca_bundle": null,
+            "aws_config": null,
+            "aws_secret_key": null,
+            "debug_botocore_endpoint_logs": false,
+            "device_id": "i-0d90c768a68d0d01f",
+            "ec2_url": null,
+            "in_vpc": true,
+            "private_ip_address": null,
+            "profile": null,
+            "public_ip": null,
+            "public_ipv4_pool": null,
+            "region": "us-east-1",
+            "release_on_disassociation": false,
+            "reuse_existing_ip_allowed": true,
+            "security_token": null,
+            "state": "present",
+            "tag_name": null,
+            "tag_value": null,
+            "validate_certs": true,
+            "wait_timeout": null
         }
     },
-    "match_groupdict": {},
-    "match_groups": [],
-    "mode": "0664",
-    "owner": "macharyaainsigh",
-    "path": "../hosts",
-    "port": null,
-    "search_regex": "ansible_ssh_user=ubuntu ansible_ssh_private_key_file=../aws-private.pem",
-    "size": 517,
-    "state": "file",
-    "uid": 1001
-}
-
-TASK [Wait for SSH to come up] *************************************************
-task path: /home/macharyaainsigh/Easypay-capstone/myec2vpc.yml:123
-<localhost> ESTABLISH LOCAL CONNECTION FOR USER: macharyaainsigh
-<localhost> EXEC /bin/sh -c 'echo ~macharyaainsigh && sleep 0'
-<localhost> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo /home/macharyaainsigh/.ansible/tmp `"&& mkdir "` echo /home/macharyaainsigh/.ansible/tmp/ansible-tmp-1622902158.8394685-20807-202637073052699 `" && echo ansible-tmp-1622902158.8394685-20807-202637073052699="` echo /home/macharyaainsigh/.ansible/tmp/ansible-tmp-1622902158.8394685-20807-202637073052699 `" ) && sleep 0'
-Using module file /home/macharyaainsigh/.local/lib/python3.9/site-packages/ansible/modules/wait_for.py
-<localhost> PUT /home/macharyaainsigh/.ansible/tmp/ansible-local-13239s7l_zghw/tmpcnm3c8zf TO /home/macharyaainsigh/.ansible/tmp/ansible-tmp-1622902158.8394685-20807-202637073052699/AnsiballZ_wait_for.py
-<localhost> EXEC /bin/sh -c 'chmod u+x /home/macharyaainsigh/.ansible/tmp/ansible-tmp-1622902158.8394685-20807-202637073052699/ /home/macharyaainsigh/.ansible/tmp/ansible-tmp-1622902158.8394685-20807-202637073052699/AnsiballZ_wait_for.py && sleep 0'
-<localhost> EXEC /bin/sh -c '/usr/bin/python /home/macharyaainsigh/.ansible/tmp/ansible-tmp-1622902158.8394685-20807-202637073052699/AnsiballZ_wait_for.py && sleep 0'
-<localhost> EXEC /bin/sh -c 'rm -f -r /home/macharyaainsigh/.ansible/tmp/ansible-tmp-1622902158.8394685-20807-202637073052699/ > /dev/null 2>&1 && sleep 0'
-ok: [localhost -> localhost] => (item={'id': 'i-060e8a2bd9e791a85', 'ami_launch_index': '0', 'private_ip': '172.10.1.95', 'private_dns_name': 'ip-172-10-1-95.ec2.internal', 'public_ip': '3.94.129.121', 'dns_name': 'ec2-3-94-129-121.compute-1.amazonaws.com', 'public_dns_name': 'ec2-3-94-129-121.compute-1.amazonaws.com', 'state_code': 16, 'architecture': 'x86_64', 'image_id': 'ami-09e67e426f25ce0d7', 'key_name': 'easypay-staging-key', 'placement': 'us-east-1f', 'region': 'us-east-1', 'kernel': None, 'ramdisk': None, 'launch_time': '2021-06-05T14:08:52.000Z', 'instance_type': 't3.micro', 'root_device_type': 'ebs', 'root_device_name': '/dev/sda1', 'state': 'running', 'hypervisor': 'xen', 'tags': {'Name': 'Master'}, 'groups': {'sg-001c358369eac93d3': 'ma_sec_group'}, 'virtualization_type': 'hvm', 'ebs_optimized': False, 'block_device_mapping': {'/dev/sda1': {'status': 'attached', 'volume_id': 'vol-0c3e69b007eb40146', 'delete_on_termination': True}}, 'tenancy': 'default'}) => {
-    "ansible_loop_var": "item",
-    "changed": false,
-    "elapsed": 0,
-    "invocation": {
-        "module_args": {
-            "active_connection_states": [
-                "ESTABLISHED",
-                "FIN_WAIT1",
-                "FIN_WAIT2",
-                "SYN_RECV",
-                "SYN_SENT",
-                "TIME_WAIT"
-            ],
-            "connect_timeout": 5,
-            "delay": 0,
-            "exclude_hosts": null,
-            "host": "3.94.129.121",
-            "msg": null,
-            "path": null,
-            "port": 22,
-            "search_regex": null,
-            "sleep": 1,
-            "state": "started",
-            "timeout": 300
-        }
-    },
-    "item": {
-        "ami_launch_index": "0",
-        "architecture": "x86_64",
-        "block_device_mapping": {
-            "/dev/sda1": {
-                "delete_on_termination": true,
-                "status": "attached",
-                "volume_id": "vol-0c3e69b007eb40146"
-            }
-        },
-        "dns_name": "ec2-3-94-129-121.compute-1.amazonaws.com",
-        "ebs_optimized": false,
-        "groups": {
-            "sg-001c358369eac93d3": "ma_sec_group"
-        },
-        "hypervisor": "xen",
-        "id": "i-060e8a2bd9e791a85",
-        "image_id": "ami-09e67e426f25ce0d7",
-        "instance_type": "t3.micro",
-        "kernel": null,
-        "key_name": "easypay-staging-key",
-        "launch_time": "2021-06-05T14:08:52.000Z",
-        "placement": "us-east-1f",
-        "private_dns_name": "ip-172-10-1-95.ec2.internal",
-        "private_ip": "172.10.1.95",
-        "public_dns_name": "ec2-3-94-129-121.compute-1.amazonaws.com",
-        "public_ip": "3.94.129.121",
-        "ramdisk": null,
-        "region": "us-east-1",
-        "root_device_name": "/dev/sda1",
-        "root_device_type": "ebs",
-        "state": "running",
-        "state_code": 16,
-        "tags": {
-            "Name": "Master"
-        },
-        "tenancy": "default",
-        "virtualization_type": "hvm"
-    },
-    "match_groupdict": {},
-    "match_groups": [],
-    "path": null,
-    "port": 22,
-    "search_regex": null,
-    "state": "started"
-}
-
-TASK [Add IP to ec2_hosts group] ***********************************************
-task path: /home/macharyaainsigh/Easypay-capstone/myec2vpc.yml:126
-creating host via 'add_host': hostname=3.94.129.121
-ok: [localhost] => (item={'id': 'i-060e8a2bd9e791a85', 'ami_launch_index': '0', 'private_ip': '172.10.1.95', 'private_dns_name': 'ip-172-10-1-95.ec2.internal', 'public_ip': '3.94.129.121', 'dns_name': 'ec2-3-94-129-121.compute-1.amazonaws.com', 'public_dns_name': 'ec2-3-94-129-121.compute-1.amazonaws.com', 'state_code': 16, 'architecture': 'x86_64', 'image_id': 'ami-09e67e426f25ce0d7', 'key_name': 'easypay-staging-key', 'placement': 'us-east-1f', 'region': 'us-east-1', 'kernel': None, 'ramdisk': None, 'launch_time': '2021-06-05T14:08:52.000Z', 'instance_type': 't3.micro', 'root_device_type': 'ebs', 'root_device_name': '/dev/sda1', 'state': 'running', 'hypervisor': 'xen', 'tags': {'Name': 'Master'}, 'groups': {'sg-001c358369eac93d3': 'ma_sec_group'}, 'virtualization_type': 'hvm', 'ebs_optimized': False, 'block_device_mapping': {'/dev/sda1': {'status': 'attached', 'volume_id': 'vol-0c3e69b007eb40146', 'delete_on_termination': True}}, 'tenancy': 'default'}) => {
-    "add_host": {
-        "groups": [
-            "ec2_hosts"
-        ],
-        "host_name": "3.94.129.121",
-        "host_vars": {}
-    },
-    "ansible_loop_var": "item",
-    "changed": false,
-    "item": {
-        "ami_launch_index": "0",
-        "architecture": "x86_64",
-        "block_device_mapping": {
-            "/dev/sda1": {
-                "delete_on_termination": true,
-                "status": "attached",
-                "volume_id": "vol-0c3e69b007eb40146"
-            }
-        },
-        "dns_name": "ec2-3-94-129-121.compute-1.amazonaws.com",
-        "ebs_optimized": false,
-        "groups": {
-            "sg-001c358369eac93d3": "ma_sec_group"
-        },
-        "hypervisor": "xen",
-        "id": "i-060e8a2bd9e791a85",
-        "image_id": "ami-09e67e426f25ce0d7",
-        "instance_type": "t3.micro",
-        "kernel": null,
-        "key_name": "easypay-staging-key",
-        "launch_time": "2021-06-05T14:08:52.000Z",
-        "placement": "us-east-1f",
-        "private_dns_name": "ip-172-10-1-95.ec2.internal",
-        "private_ip": "172.10.1.95",
-        "public_dns_name": "ec2-3-94-129-121.compute-1.amazonaws.com",
-        "public_ip": "3.94.129.121",
-        "ramdisk": null,
-        "region": "us-east-1",
-        "root_device_name": "/dev/sda1",
-        "root_device_type": "ebs",
-        "state": "running",
-        "state_code": 16,
-        "tags": {
-            "Name": "Master"
-        },
-        "tenancy": "default",
-        "virtualization_type": "hvm"
-    }
-}
-
-TASK [Wait for SSH to come up] *************************************************
-task path: /home/macharyaainsigh/Easypay-capstone/myec2vpc.yml:129
-<localhost> ESTABLISH LOCAL CONNECTION FOR USER: macharyaainsigh
-<localhost> EXEC /bin/sh -c 'echo ~macharyaainsigh && sleep 0'
-<localhost> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo /home/macharyaainsigh/.ansible/tmp `"&& mkdir "` echo /home/macharyaainsigh/.ansible/tmp/ansible-tmp-1622902159.1976867-21070-208794809438967 `" && echo ansible-tmp-1622902159.1976867-21070-208794809438967="` echo /home/macharyaainsigh/.ansible/tmp/ansible-tmp-1622902159.1976867-21070-208794809438967 `" ) && sleep 0'
-Using module file /home/macharyaainsigh/.local/lib/python3.9/site-packages/ansible/modules/wait_for.py
-<localhost> PUT /home/macharyaainsigh/.ansible/tmp/ansible-local-13239s7l_zghw/tmpaa74xw7p TO /home/macharyaainsigh/.ansible/tmp/ansible-tmp-1622902159.1976867-21070-208794809438967/AnsiballZ_wait_for.py
-<localhost> EXEC /bin/sh -c 'chmod u+x /home/macharyaainsigh/.ansible/tmp/ansible-tmp-1622902159.1976867-21070-208794809438967/ /home/macharyaainsigh/.ansible/tmp/ansible-tmp-1622902159.1976867-21070-208794809438967/AnsiballZ_wait_for.py && sleep 0'
-<localhost> EXEC /bin/sh -c '/usr/bin/python /home/macharyaainsigh/.ansible/tmp/ansible-tmp-1622902159.1976867-21070-208794809438967/AnsiballZ_wait_for.py && sleep 0'
-<localhost> EXEC /bin/sh -c 'rm -f -r /home/macharyaainsigh/.ansible/tmp/ansible-tmp-1622902159.1976867-21070-208794809438967/ > /dev/null 2>&1 && sleep 0'
-<localhost> EXEC /bin/sh -c 'echo ~macharyaainsigh && sleep 0'
-ok: [localhost -> localhost] => (item={'id': 'i-08cf68f15ed594fe7', 'ami_launch_index': '0', 'private_ip': '172.10.1.67', 'private_dns_name': 'ip-172-10-1-67.ec2.internal', 'public_ip': '3.83.35.25', 'dns_name': 'ec2-3-83-35-25.compute-1.amazonaws.com', 'public_dns_name': 'ec2-3-83-35-25.compute-1.amazonaws.com', 'state_code': 16, 'architecture': 'x86_64', 'image_id': 'ami-09e67e426f25ce0d7', 'key_name': 'easypay-staging-key', 'placement': 'us-east-1f', 'region': 'us-east-1', 'kernel': None, 'ramdisk': None, 'launch_time': '2021-06-05T14:09:05.000Z', 'instance_type': 't3.micro', 'root_device_type': 'ebs', 'root_device_name': '/dev/sda1', 'state': 'running', 'hypervisor': 'xen', 'tags': {'Name': 'Nodes'}, 'groups': {'sg-001c358369eac93d3': 'ma_sec_group'}, 'virtualization_type': 'hvm', 'ebs_optimized': False, 'block_device_mapping': {'/dev/sda1': {'status': 'attached', 'volume_id': 'vol-06325416ca7bbffd8', 'delete_on_termination': True}}, 'tenancy': 'default'}) => {
-    "ansible_loop_var": "item",
-    "changed": false,
-    "elapsed": 8,
-    "invocation": {
-        "module_args": {
-            "active_connection_states": [
-                "ESTABLISHED",
-                "FIN_WAIT1",
-                "FIN_WAIT2",
-                "SYN_RECV",
-                "SYN_SENT",
-                "TIME_WAIT"
-            ],
-            "connect_timeout": 5,
-            "delay": 0,
-            "exclude_hosts": null,
-            "host": "3.83.35.25",
-            "msg": null,
-            "path": null,
-            "port": 22,
-            "search_regex": null,
-            "sleep": 1,
-            "state": "started",
-            "timeout": 300
-        }
-    },
-    "item": {
-        "ami_launch_index": "0",
-        "architecture": "x86_64",
-        "block_device_mapping": {
-            "/dev/sda1": {
-                "delete_on_termination": true,
-                "status": "attached",
-                "volume_id": "vol-06325416ca7bbffd8"
-            }
-        },
-        "dns_name": "ec2-3-83-35-25.compute-1.amazonaws.com",
-        "ebs_optimized": false,
-        "groups": {
-            "sg-001c358369eac93d3": "ma_sec_group"
-        },
-        "hypervisor": "xen",
-        "id": "i-08cf68f15ed594fe7",
-        "image_id": "ami-09e67e426f25ce0d7",
-        "instance_type": "t3.micro",
-        "kernel": null,
-        "key_name": "easypay-staging-key",
-        "launch_time": "2021-06-05T14:09:05.000Z",
-        "placement": "us-east-1f",
-        "private_dns_name": "ip-172-10-1-67.ec2.internal",
-        "private_ip": "172.10.1.67",
-        "public_dns_name": "ec2-3-83-35-25.compute-1.amazonaws.com",
-        "public_ip": "3.83.35.25",
-        "ramdisk": null,
-        "region": "us-east-1",
-        "root_device_name": "/dev/sda1",
-        "root_device_type": "ebs",
-        "state": "running",
-        "state_code": 16,
-        "tags": {
-            "Name": "Nodes"
-        },
-        "tenancy": "default",
-        "virtualization_type": "hvm"
-    },
-    "match_groupdict": {},
-    "match_groups": [],
-    "path": null,
-    "port": 22,
-    "search_regex": null,
-    "state": "started"
-}
-<localhost> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo /home/macharyaainsigh/.ansible/tmp `"&& mkdir "` echo /home/macharyaainsigh/.ansible/tmp/ansible-tmp-1622902167.4949-21070-204297573848439 `" && echo ansible-tmp-1622902167.4949-21070-204297573848439="` echo /home/macharyaainsigh/.ansible/tmp/ansible-tmp-1622902167.4949-21070-204297573848439 `" ) && sleep 0'
-Using module file /home/macharyaainsigh/.local/lib/python3.9/site-packages/ansible/modules/wait_for.py
-<localhost> PUT /home/macharyaainsigh/.ansible/tmp/ansible-local-13239s7l_zghw/tmp8f86cs8y TO /home/macharyaainsigh/.ansible/tmp/ansible-tmp-1622902167.4949-21070-204297573848439/AnsiballZ_wait_for.py
-<localhost> EXEC /bin/sh -c 'chmod u+x /home/macharyaainsigh/.ansible/tmp/ansible-tmp-1622902167.4949-21070-204297573848439/ /home/macharyaainsigh/.ansible/tmp/ansible-tmp-1622902167.4949-21070-204297573848439/AnsiballZ_wait_for.py && sleep 0'
-<localhost> EXEC /bin/sh -c '/usr/bin/python /home/macharyaainsigh/.ansible/tmp/ansible-tmp-1622902167.4949-21070-204297573848439/AnsiballZ_wait_for.py && sleep 0'
-<localhost> EXEC /bin/sh -c 'rm -f -r /home/macharyaainsigh/.ansible/tmp/ansible-tmp-1622902167.4949-21070-204297573848439/ > /dev/null 2>&1 && sleep 0'
-<localhost> EXEC /bin/sh -c 'echo ~macharyaainsigh && sleep 0'
-ok: [localhost -> localhost] => (item={'id': 'i-0c52f14a2d20dfa2b', 'ami_launch_index': '1', 'private_ip': '172.10.1.50', 'private_dns_name': 'ip-172-10-1-50.ec2.internal', 'public_ip': '18.232.179.107', 'dns_name': 'ec2-18-232-179-107.compute-1.amazonaws.com', 'public_dns_name': 'ec2-18-232-179-107.compute-1.amazonaws.com', 'state_code': 16, 'architecture': 'x86_64', 'image_id': 'ami-09e67e426f25ce0d7', 'key_name': 'easypay-staging-key', 'placement': 'us-east-1f', 'region': 'us-east-1', 'kernel': None, 'ramdisk': None, 'launch_time': '2021-06-05T14:09:05.000Z', 'instance_type': 't3.micro', 'root_device_type': 'ebs', 'root_device_name': '/dev/sda1', 'state': 'running', 'hypervisor': 'xen', 'tags': {'Name': 'Nodes'}, 'groups': {'sg-001c358369eac93d3': 'ma_sec_group'}, 'virtualization_type': 'hvm', 'ebs_optimized': False, 'block_device_mapping': {'/dev/sda1': {'status': 'attached', 'volume_id': 'vol-02df5e70b66928a78', 'delete_on_termination': True}}, 'tenancy': 'default'}) => {
-    "ansible_loop_var": "item",
-    "changed": false,
-    "elapsed": 0,
-    "invocation": {
-        "module_args": {
-            "active_connection_states": [
-                "ESTABLISHED",
-                "FIN_WAIT1",
-                "FIN_WAIT2",
-                "SYN_RECV",
-                "SYN_SENT",
-                "TIME_WAIT"
-            ],
-            "connect_timeout": 5,
-            "delay": 0,
-            "exclude_hosts": null,
-            "host": "18.232.179.107",
-            "msg": null,
-            "path": null,
-            "port": 22,
-            "search_regex": null,
-            "sleep": 1,
-            "state": "started",
-            "timeout": 300
-        }
-    },
-    "item": {
-        "ami_launch_index": "1",
-        "architecture": "x86_64",
-        "block_device_mapping": {
-            "/dev/sda1": {
-                "delete_on_termination": true,
-                "status": "attached",
-                "volume_id": "vol-02df5e70b66928a78"
-            }
-        },
-        "dns_name": "ec2-18-232-179-107.compute-1.amazonaws.com",
-        "ebs_optimized": false,
-        "groups": {
-            "sg-001c358369eac93d3": "ma_sec_group"
-        },
-        "hypervisor": "xen",
-        "id": "i-0c52f14a2d20dfa2b",
-        "image_id": "ami-09e67e426f25ce0d7",
-        "instance_type": "t3.micro",
-        "kernel": null,
-        "key_name": "easypay-staging-key",
-        "launch_time": "2021-06-05T14:09:05.000Z",
-        "placement": "us-east-1f",
-        "private_dns_name": "ip-172-10-1-50.ec2.internal",
-        "private_ip": "172.10.1.50",
-        "public_dns_name": "ec2-18-232-179-107.compute-1.amazonaws.com",
-        "public_ip": "18.232.179.107",
-        "ramdisk": null,
-        "region": "us-east-1",
-        "root_device_name": "/dev/sda1",
-        "root_device_type": "ebs",
-        "state": "running",
-        "state_code": 16,
-        "tags": {
-            "Name": "Nodes"
-        },
-        "tenancy": "default",
-        "virtualization_type": "hvm"
-    },
-    "match_groupdict": {},
-    "match_groups": [],
-    "path": null,
-    "port": 22,
-    "search_regex": null,
-    "state": "started"
-}
-<localhost> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo /home/macharyaainsigh/.ansible/tmp `"&& mkdir "` echo /home/macharyaainsigh/.ansible/tmp/ansible-tmp-1622902167.7826374-21070-209783758159025 `" && echo ansible-tmp-1622902167.7826374-21070-209783758159025="` echo /home/macharyaainsigh/.ansible/tmp/ansible-tmp-1622902167.7826374-21070-209783758159025 `" ) && sleep 0'
-Using module file /home/macharyaainsigh/.local/lib/python3.9/site-packages/ansible/modules/wait_for.py
-<localhost> PUT /home/macharyaainsigh/.ansible/tmp/ansible-local-13239s7l_zghw/tmpyt48lmdu TO /home/macharyaainsigh/.ansible/tmp/ansible-tmp-1622902167.7826374-21070-209783758159025/AnsiballZ_wait_for.py
-<localhost> EXEC /bin/sh -c 'chmod u+x /home/macharyaainsigh/.ansible/tmp/ansible-tmp-1622902167.7826374-21070-209783758159025/ /home/macharyaainsigh/.ansible/tmp/ansible-tmp-1622902167.7826374-21070-209783758159025/AnsiballZ_wait_for.py && sleep 0'
-<localhost> EXEC /bin/sh -c '/usr/bin/python /home/macharyaainsigh/.ansible/tmp/ansible-tmp-1622902167.7826374-21070-209783758159025/AnsiballZ_wait_for.py && sleep 0'
-<localhost> EXEC /bin/sh -c 'rm -f -r /home/macharyaainsigh/.ansible/tmp/ansible-tmp-1622902167.7826374-21070-209783758159025/ > /dev/null 2>&1 && sleep 0'
-ok: [localhost -> localhost] => (item={'id': 'i-0fb099754658d82ba', 'ami_launch_index': '2', 'private_ip': '172.10.1.111', 'private_dns_name': 'ip-172-10-1-111.ec2.internal', 'public_ip': '3.236.251.70', 'dns_name': 'ec2-3-236-251-70.compute-1.amazonaws.com', 'public_dns_name': 'ec2-3-236-251-70.compute-1.amazonaws.com', 'state_code': 16, 'architecture': 'x86_64', 'image_id': 'ami-09e67e426f25ce0d7', 'key_name': 'easypay-staging-key', 'placement': 'us-east-1f', 'region': 'us-east-1', 'kernel': None, 'ramdisk': None, 'launch_time': '2021-06-05T14:09:05.000Z', 'instance_type': 't3.micro', 'root_device_type': 'ebs', 'root_device_name': '/dev/sda1', 'state': 'running', 'hypervisor': 'xen', 'tags': {'Name': 'Nodes'}, 'groups': {'sg-001c358369eac93d3': 'ma_sec_group'}, 'virtualization_type': 'hvm', 'ebs_optimized': False, 'block_device_mapping': {'/dev/sda1': {'status': 'attached', 'volume_id': 'vol-09ceef4eba505bf67', 'delete_on_termination': True}}, 'tenancy': 'default'}) => {
-    "ansible_loop_var": "item",
-    "changed": false,
-    "elapsed": 0,
-    "invocation": {
-        "module_args": {
-            "active_connection_states": [
-                "ESTABLISHED",
-                "FIN_WAIT1",
-                "FIN_WAIT2",
-                "SYN_RECV",
-                "SYN_SENT",
-                "TIME_WAIT"
-            ],
-            "connect_timeout": 5,
-            "delay": 0,
-            "exclude_hosts": null,
-            "host": "3.236.251.70",
-            "msg": null,
-            "path": null,
-            "port": 22,
-            "search_regex": null,
-            "sleep": 1,
-            "state": "started",
-            "timeout": 300
-        }
-    },
-    "item": {
-        "ami_launch_index": "2",
-        "architecture": "x86_64",
-        "block_device_mapping": {
-            "/dev/sda1": {
-                "delete_on_termination": true,
-                "status": "attached",
-                "volume_id": "vol-09ceef4eba505bf67"
-            }
-        },
-        "dns_name": "ec2-3-236-251-70.compute-1.amazonaws.com",
-        "ebs_optimized": false,
-        "groups": {
-            "sg-001c358369eac93d3": "ma_sec_group"
-        },
-        "hypervisor": "xen",
-        "id": "i-0fb099754658d82ba",
-        "image_id": "ami-09e67e426f25ce0d7",
-        "instance_type": "t3.micro",
-        "kernel": null,
-        "key_name": "easypay-staging-key",
-        "launch_time": "2021-06-05T14:09:05.000Z",
-        "placement": "us-east-1f",
-        "private_dns_name": "ip-172-10-1-111.ec2.internal",
-        "private_ip": "172.10.1.111",
-        "public_dns_name": "ec2-3-236-251-70.compute-1.amazonaws.com",
-        "public_ip": "3.236.251.70",
-        "ramdisk": null,
-        "region": "us-east-1",
-        "root_device_name": "/dev/sda1",
-        "root_device_type": "ebs",
-        "state": "running",
-        "state_code": 16,
-        "tags": {
-            "Name": "Nodes"
-        },
-        "tenancy": "default",
-        "virtualization_type": "hvm"
-    },
-    "match_groupdict": {},
-    "match_groups": [],
-    "path": null,
-    "port": 22,
-    "search_regex": null,
-    "state": "started"
-}
-
-TASK [Add IP to ec2_hosts group] ***********************************************
-task path: /home/macharyaainsigh/Easypay-capstone/myec2vpc.yml:132
-creating host via 'add_host': hostname=3.83.35.25
-creating host via 'add_host': hostname=18.232.179.107
-ok: [localhost] => (item={'id': 'i-08cf68f15ed594fe7', 'ami_launch_index': '0', 'private_ip': '172.10.1.67', 'private_dns_name': 'ip-172-10-1-67.ec2.internal', 'public_ip': '3.83.35.25', 'dns_name': 'ec2-3-83-35-25.compute-1.amazonaws.com', 'public_dns_name': 'ec2-3-83-35-25.compute-1.amazonaws.com', 'state_code': 16, 'architecture': 'x86_64', 'image_id': 'ami-09e67e426f25ce0d7', 'key_name': 'easypay-staging-key', 'placement': 'us-east-1f', 'region': 'us-east-1', 'kernel': None, 'ramdisk': None, 'launch_time': '2021-06-05T14:09:05.000Z', 'instance_type': 't3.micro', 'root_device_type': 'ebs', 'root_device_name': '/dev/sda1', 'state': 'running', 'hypervisor': 'xen', 'tags': {'Name': 'Nodes'}, 'groups': {'sg-001c358369eac93d3': 'ma_sec_group'}, 'virtualization_type': 'hvm', 'ebs_optimized': False, 'block_device_mapping': {'/dev/sda1': {'status': 'attached', 'volume_id': 'vol-06325416ca7bbffd8', 'delete_on_termination': True}}, 'tenancy': 'default'}) => {
-    "add_host": {
-        "groups": [
-            "ec2_hosts"
-        ],
-        "host_name": "3.83.35.25",
-        "host_vars": {}
-    },
-    "ansible_loop_var": "item",
-    "changed": false,
-    "item": {
-        "ami_launch_index": "0",
-        "architecture": "x86_64",
-        "block_device_mapping": {
-            "/dev/sda1": {
-                "delete_on_termination": true,
-                "status": "attached",
-                "volume_id": "vol-06325416ca7bbffd8"
-            }
-        },
-        "dns_name": "ec2-3-83-35-25.compute-1.amazonaws.com",
-        "ebs_optimized": false,
-        "groups": {
-            "sg-001c358369eac93d3": "ma_sec_group"
-        },
-        "hypervisor": "xen",
-        "id": "i-08cf68f15ed594fe7",
-        "image_id": "ami-09e67e426f25ce0d7",
-        "instance_type": "t3.micro",
-        "kernel": null,
-        "key_name": "easypay-staging-key",
-        "launch_time": "2021-06-05T14:09:05.000Z",
-        "placement": "us-east-1f",
-        "private_dns_name": "ip-172-10-1-67.ec2.internal",
-        "private_ip": "172.10.1.67",
-        "public_dns_name": "ec2-3-83-35-25.compute-1.amazonaws.com",
-        "public_ip": "3.83.35.25",
-        "ramdisk": null,
-        "region": "us-east-1",
-        "root_device_name": "/dev/sda1",
-        "root_device_type": "ebs",
-        "state": "running",
-        "state_code": 16,
-        "tags": {
-            "Name": "Nodes"
-        },
-        "tenancy": "default",
-        "virtualization_type": "hvm"
-    }
-}
-creating host via 'add_host': hostname=3.236.251.70
-ok: [localhost] => (item={'id': 'i-0c52f14a2d20dfa2b', 'ami_launch_index': '1', 'private_ip': '172.10.1.50', 'private_dns_name': 'ip-172-10-1-50.ec2.internal', 'public_ip': '18.232.179.107', 'dns_name': 'ec2-18-232-179-107.compute-1.amazonaws.com', 'public_dns_name': 'ec2-18-232-179-107.compute-1.amazonaws.com', 'state_code': 16, 'architecture': 'x86_64', 'image_id': 'ami-09e67e426f25ce0d7', 'key_name': 'easypay-staging-key', 'placement': 'us-east-1f', 'region': 'us-east-1', 'kernel': None, 'ramdisk': None, 'launch_time': '2021-06-05T14:09:05.000Z', 'instance_type': 't3.micro', 'root_device_type': 'ebs', 'root_device_name': '/dev/sda1', 'state': 'running', 'hypervisor': 'xen', 'tags': {'Name': 'Nodes'}, 'groups': {'sg-001c358369eac93d3': 'ma_sec_group'}, 'virtualization_type': 'hvm', 'ebs_optimized': False, 'block_device_mapping': {'/dev/sda1': {'status': 'attached', 'volume_id': 'vol-02df5e70b66928a78', 'delete_on_termination': True}}, 'tenancy': 'default'}) => {
-    "add_host": {
-        "groups": [
-            "ec2_hosts"
-        ],
-        "host_name": "18.232.179.107",
-        "host_vars": {}
-    },
-    "ansible_loop_var": "item",
-    "changed": false,
-    "item": {
-        "ami_launch_index": "1",
-        "architecture": "x86_64",
-        "block_device_mapping": {
-            "/dev/sda1": {
-                "delete_on_termination": true,
-                "status": "attached",
-                "volume_id": "vol-02df5e70b66928a78"
-            }
-        },
-        "dns_name": "ec2-18-232-179-107.compute-1.amazonaws.com",
-        "ebs_optimized": false,
-        "groups": {
-            "sg-001c358369eac93d3": "ma_sec_group"
-        },
-        "hypervisor": "xen",
-        "id": "i-0c52f14a2d20dfa2b",
-        "image_id": "ami-09e67e426f25ce0d7",
-        "instance_type": "t3.micro",
-        "kernel": null,
-        "key_name": "easypay-staging-key",
-        "launch_time": "2021-06-05T14:09:05.000Z",
-        "placement": "us-east-1f",
-        "private_dns_name": "ip-172-10-1-50.ec2.internal",
-        "private_ip": "172.10.1.50",
-        "public_dns_name": "ec2-18-232-179-107.compute-1.amazonaws.com",
-        "public_ip": "18.232.179.107",
-        "ramdisk": null,
-        "region": "us-east-1",
-        "root_device_name": "/dev/sda1",
-        "root_device_type": "ebs",
-        "state": "running",
-        "state_code": 16,
-        "tags": {
-            "Name": "Nodes"
-        },
-        "tenancy": "default",
-        "virtualization_type": "hvm"
-    }
-}
-ok: [localhost] => (item={'id': 'i-0fb099754658d82ba', 'ami_launch_index': '2', 'private_ip': '172.10.1.111', 'private_dns_name': 'ip-172-10-1-111.ec2.internal', 'public_ip': '3.236.251.70', 'dns_name': 'ec2-3-236-251-70.compute-1.amazonaws.com', 'public_dns_name': 'ec2-3-236-251-70.compute-1.amazonaws.com', 'state_code': 16, 'architecture': 'x86_64', 'image_id': 'ami-09e67e426f25ce0d7', 'key_name': 'easypay-staging-key', 'placement': 'us-east-1f', 'region': 'us-east-1', 'kernel': None, 'ramdisk': None, 'launch_time': '2021-06-05T14:09:05.000Z', 'instance_type': 't3.micro', 'root_device_type': 'ebs', 'root_device_name': '/dev/sda1', 'state': 'running', 'hypervisor': 'xen', 'tags': {'Name': 'Nodes'}, 'groups': {'sg-001c358369eac93d3': 'ma_sec_group'}, 'virtualization_type': 'hvm', 'ebs_optimized': False, 'block_device_mapping': {'/dev/sda1': {'status': 'attached', 'volume_id': 'vol-09ceef4eba505bf67', 'delete_on_termination': True}}, 'tenancy': 'default'}) => {
-    "add_host": {
-        "groups": [
-            "ec2_hosts"
-        ],
-        "host_name": "3.236.251.70",
-        "host_vars": {}
-    },
-    "ansible_loop_var": "item",
-    "changed": false,
-    "item": {
-        "ami_launch_index": "2",
-        "architecture": "x86_64",
-        "block_device_mapping": {
-            "/dev/sda1": {
-                "delete_on_termination": true,
-                "status": "attached",
-                "volume_id": "vol-09ceef4eba505bf67"
-            }
-        },
-        "dns_name": "ec2-3-236-251-70.compute-1.amazonaws.com",
-        "ebs_optimized": false,
-        "groups": {
-            "sg-001c358369eac93d3": "ma_sec_group"
-        },
-        "hypervisor": "xen",
-        "id": "i-0fb099754658d82ba",
-        "image_id": "ami-09e67e426f25ce0d7",
-        "instance_type": "t3.micro",
-        "kernel": null,
-        "key_name": "easypay-staging-key",
-        "launch_time": "2021-06-05T14:09:05.000Z",
-        "placement": "us-east-1f",
-        "private_dns_name": "ip-172-10-1-111.ec2.internal",
-        "private_ip": "172.10.1.111",
-        "public_dns_name": "ec2-3-236-251-70.compute-1.amazonaws.com",
-        "public_ip": "3.236.251.70",
-        "ramdisk": null,
-        "region": "us-east-1",
-        "root_device_name": "/dev/sda1",
-        "root_device_type": "ebs",
-        "state": "running",
-        "state_code": 16,
-        "tags": {
-            "Name": "Nodes"
-        },
-        "tenancy": "default",
-        "virtualization_type": "hvm"
-    }
+    "item": "i-0d90c768a68d0d01f",
+    "public_ip": "52.22.106.30"
 }
 META: ran handlers
 META: ran handlers
 
 PLAY RECAP *********************************************************************
-localhost                  : ok=18   changed=12   unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+localhost                  : ok=11   changed=4    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
 
