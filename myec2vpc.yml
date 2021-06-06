@@ -98,7 +98,7 @@
           Name: Nodes
         state: present
       register: worker_nodes
-     - wait_for: 'path={{ hostpath }} search_regex={{hoststring}}'
+    - wait_for: 'path={{ hostpath }} search_regex={{hoststring}}'
     - name: associate new elastic IPs with each of the instances
       ec2_eip:
         device_id: "{{ item }}"
