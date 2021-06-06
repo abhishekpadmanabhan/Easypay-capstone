@@ -42,7 +42,7 @@
      become: yes
      command: "{{ item }}"
      with_items: 
-        - kubectl apply -f  "https://cloud.weave.works/k8s/net?k8s-version=$(kubectl version | base64 | tr -d '\n')"
+        - kubectl apply -f  "https://cloud.weave.works/k8s/net"
    - pause: seconds=30
    - name: Get the token for joining the nodes with Kuberentes master.
      shell: kubeadm token create  --print-join-command
