@@ -1,59 +1,21 @@
+ansible-playbook [core 2.11.1] 
+  config file = /home/macharyaainsigh/repo/Easypay-capstone/ansible.cfg
+  configured module search path = ['/home/macharyaainsigh/.ansible/plugins/modules', '/usr/share/ansible/plugins/modules']
+  ansible python module location = /home/macharyaainsigh/.local/lib/python3.9/site-packages/ansible
+  ansible collection location = /home/macharyaainsigh/.ansible/collections:/usr/share/ansible/collections
+  executable location = /usr/bin/ansible-playbook
+  python version = 3.9.4 (default, Apr  9 2021, 01:15:05) [GCC 5.4.0 20160609]
+  jinja version = 2.8
+  libyaml = False
+Using /home/macharyaainsigh/repo/Easypay-capstone/ansible.cfg as config file
+host_list declined parsing /home/macharyaainsigh/repo/Easypay-capstone/inventory_aws_ec2.yml as it did not pass its verify_file() method
+script declined parsing /home/macharyaainsigh/repo/Easypay-capstone/inventory_aws_ec2.yml as it did not pass its verify_file() method
+Parsed /home/macharyaainsigh/repo/Easypay-capstone/inventory_aws_ec2.yml inventory source with auto plugin
+redirecting (type: modules) ansible.builtin.authorized_key to ansible.posix.authorized_key
+Skipping callback 'default', as we already have a stdout callback.
+Skipping callback 'minimal', as we already have a stdout callback.
+Skipping callback 'oneline', as we already have a stdout callback.
+
+PLAYBOOK: create_ansible_user.yml **********************************************
+1 plays in create_ansible_user.yml
 Account need to be create in remote server.: 
-PLAY [nodes] *******************************************************************
-
-TASK [Gathering Facts] *********************************************************
-ok: [18.232.179.107]
-ok: [3.83.35.25]
-ok: [3.94.129.121]
-ok: [3.236.251.70]
-
-TASK [creating the user ansible.] **********************************************
-changed: [3.94.129.121]
-changed: [18.232.179.107]
-changed: [3.83.35.25]
-changed: [3.236.251.70]
-
-TASK [Create a dedicated sudo entry file for the user.] ************************
-changed: [3.94.129.121]
-changed: [3.83.35.25]
-changed: [18.232.179.107]
-changed: [3.236.251.70]
-
-TASK [Setting up Sudo without Password for user ansible.] **********************
-changed: [3.94.129.121]
-changed: [3.236.251.70]
-changed: [3.83.35.25]
-changed: [18.232.179.107]
-
-TASK [Set authorized key for user copying it from current ansible  user.] ******
-changed: [3.83.35.25]
-changed: [3.94.129.121]
-changed: [3.236.251.70]
-changed: [18.232.179.107]
-
-TASK [Print the created user.] *************************************************
-changed: [3.236.251.70]
-changed: [18.232.179.107]
-changed: [3.94.129.121]
-changed: [3.83.35.25]
-
-TASK [debug] *******************************************************************
-ok: [3.83.35.25] => {
-    "msg": "uid=1001(ansible) gid=1001(ansible) groups=1001(ansible)"
-}
-ok: [18.232.179.107] => {
-    "msg": "uid=1001(ansible) gid=1001(ansible) groups=1001(ansible)"
-}
-ok: [3.236.251.70] => {
-    "msg": "uid=1001(ansible) gid=1001(ansible) groups=1001(ansible)"
-}
-ok: [3.94.129.121] => {
-    "msg": "uid=1001(ansible) gid=1001(ansible) groups=1001(ansible)"
-}
-
-PLAY RECAP *********************************************************************
-18.232.179.107             : ok=7    changed=5    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
-3.236.251.70               : ok=7    changed=5    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
-3.83.35.25                 : ok=7    changed=5    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
-3.94.129.121               : ok=7    changed=5    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
-
