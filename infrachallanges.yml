@@ -1,0 +1,22 @@
+kind: Deployment
+apiVersion: apps/v1
+metadata:
+  name: infrachallangesproject
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: myeasypayproject
+  template:
+    metadata:
+      labels:
+        app: myeasypayproject
+    spec:
+      containers:
+        - name: cont1
+          image: nginx
+          ports:
+            - containerPort: 80
+          resources:
+            limits:
+              cpu: 10m
